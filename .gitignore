@@ -97,3 +97,14 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Project-specific ignores for ODEs NumMath project
+# Data exports and simulation results
+*.csv
+*.txt
+# Exclude large data files but keep small config files
+/[Dd]ata/
+/[Ee]xports/
+# Temporary analysis files
+*.tmp
+analysis_*.json
