@@ -1,0 +1,22 @@
+# Requirements for ODEs NumMath Project
+# Phase Plane Analysis and Numerical Methods
+
+# Core numerical computing
+numpy>=2.0.0
+
+# Plotting and visualization
+matplotlib>=3.8.0
+
+# Scientific computing (for ODEs solving)
+scipy>=1.11.0
+
+# Jupyter notebook support (optional, for development)
+jupyter>=1.0.0
+notebook>=6.5.0
+
+# Additional useful packages for numerical analysis
+sympy>=1.12.0
+pandas>=2.0.0
+
+# Optional: For better interactive plots
+ipywidgets>=8.0.0
