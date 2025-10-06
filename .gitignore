@@ -175,3 +175,11 @@ dmypy.json
 .pyre/
 .vscode/settings.json
 .DS_Store
+docs/jcematcom/jcematcom.aux
+docs/jcematcom/jcematcom.aux
+docs/jcematcom/jcematcom.fdb_latexmk
+docs/jcematcom/jcematcom.aux
+docs/jcematcom/jcematcom.fls
+docs/jcematcom/jcematcom.log
+docs/jcematcom/jcematcom.out
+docs/jcematcom/jcematcom.synctex.gz
