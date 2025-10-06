@@ -6,9 +6,9 @@
 
 Crearás una aplicación con una interfaz principal que permita al usuario seleccionar y explorar tres escenas diferentes, cada una correspondiente a una de las partes del Tema 1:
 
-1. **Escena A:** Cinemática y Métodos Numéricos
+1. **Escena A(completada):** Cinemática y Métodos Numéricos
 2. **Escena B:** Análisis de Bifurcación
-3. **Escena C:** Oscilador Amortiguado y Plano de Fase
+3. **Escena C(completada):** Oscilador Amortiguado y Plano de Fase
 
 Cada escena tendrá una simulación 3D de un automóvil y una interfaz de usuario (UI) que mostrará los gráficos y datos relevantes, cumpliendo con todos los requisitos del "Enfoque".
 
