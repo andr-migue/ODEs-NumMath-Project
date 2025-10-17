@@ -260,11 +260,11 @@ Todas las simulaciones descritas han sido implementadas en Unity, proporcionando
 
 La siguiente tabla muestra los valores de aceleración, velocidad y posición en momentos específicos:
 
-\begin{table}[htbp]
+\begin{table}[t]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
-Tiempo (s) & Aceleración (m/s²) & Velocidad (m/s) & Posición (m) \\
+Tiempo (s) & Acel. (m/s²) & Vel. (m/s) & Pos. (m) \\
 \hline
 0 & 0.00 & 0.00 & 0.00 \\
 5 & 6.00 & 12.50 & 18.75 \\
@@ -305,74 +305,77 @@ Para resolver numéricamente la ecuación diferencial, se implementaron tres mé
 
 La implementación de estos métodos se realizó con diferentes pasos de integración para estudiar su convergencia y estabilidad. Se utilizó un paso base de $h = 0.1$ segundos para la comparación principal.
 
-\begin{table}[htbp]
+\begin{table*}[t]
 \centering
+\small
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Método} & \textbf{Orden} & \textbf{Evaluaciones por paso} & \textbf{Estabilidad} & \textbf{Precisión} \\
+Método & Orden & Eval./paso & Estab. & Prec. \\
 \hline
 Euler & 1 & 1 & Baja & Baja \\
 RK2 & 2 & 2 & Media & Media \\
 RK4 & 4 & 4 & Alta & Alta \\
 \hline
 \end{tabular}
-\caption{Características de los métodos numéricos implementados}
+\caption{Características de los métodos numéricos}
 \label{tab:metodos_caracteristicas}
-\end{table}
+\end{table*}
 
 \subsection{Comparación de Métodos Numéricos}
 
 La siguiente figura muestra una comparación entre los diferentes métodos numéricos implementados (Euler, RK2 y RK4) y la solución analítica:
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{pictures/MethodsComparation.png}
+\includegraphics[width=0.9\columnwidth]{pictures/MethodsComparation.png}
 \caption{Comparación entre métodos numéricos y la solución analítica}
 \label{fig:comparacion_metodos}
 \end{figure}
 
 Para cuantificar la precisión de cada método, se calculó el error absoluto respecto a la solución analítica en diferentes puntos del intervalo $[0, 10]$ segundos. La tabla \ref{tab:errores_metodos} muestra estos errores para $t = 5$ s y $t = 10$ s con un paso de integración $h = 0.1$ s.
 
-\begin{table}[htbp]
+\begin{table*}[t]
 \centering
+\small
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Tiempo (s)} & \textbf{Error Euler} & \textbf{Error RK2} & \textbf{Error RK4} \\
+Tiempo (s) & Err. Euler & Err. RK2 & Err. RK4 \\
 \hline
 5 & 0.625 & 0.031 & $<0.001$ \\
 10 & 3.500 & 0.175 & 0.011 \\
 \hline
 \end{tabular}
-\caption{Error absoluto de los métodos numéricos respecto a la solución analítica}
+\caption{Error absoluto de los métodos numéricos}
 \label{tab:errores_metodos}
-\end{table}
+\end{table*}
 
 Se observa que el error del método de Euler crece significativamente con el tiempo, mientras que el método RK4 mantiene una precisión muy alta incluso al final del intervalo. El método RK2 presenta un comportamiento intermedio.
 
 También se estudió la convergencia de los métodos al reducir el paso de integración. La tabla \ref{tab:convergencia} muestra cómo disminuye el error máximo al reducir el paso.
 
-\begin{table}[htbp]
+\begin{table*}[t]
 \centering
+\small
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Paso $h$} & \textbf{Error máx. Euler} & \textbf{Error máx. RK2} & \textbf{Error máx. RK4} \\
+Paso $h$ & Err. máx. Euler & Err. máx. RK2 & Err. máx. RK4 \\
 \hline
 0.1 & 3.500 & 0.175 & 0.011 \\
 0.05 & 1.750 & 0.044 & $<0.001$ \\
 0.01 & 0.350 & 0.002 & $<0.0001$ \\
 \hline
 \end{tabular}
-\caption{Convergencia de los métodos numéricos al reducir el paso de integración}
+\caption{Convergencia de los métodos numéricos}
 \label{tab:convergencia}
-\end{table}
+\end{table*}
 
 \subsection{Análisis de Condicionamiento}
 
 El número de condición del problema se visualiza para entender la sensibilidad de la solución a pequeñas perturbaciones:
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{pictures/CondNumber.png}
+\includegraphics[width=0.9\columnwidth]{pictures/CondNumber.png}
 \caption{Número de condición para el problema cinemático}
 \label{fig:cond_number}
 \end{figure}
@@ -387,18 +390,18 @@ donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración.
 
 La tabla \ref{tab:cond_number} muestra los valores del número de condición en diferentes instantes de tiempo:
 
-\begin{table}[h]
+\begin{table}[t]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
-\textbf{Tiempo (s)} & \textbf{Número de condición} & \textbf{Interpretación} \\
+Tiempo (s) & Núm. cond. & Interpret. \\
 \hline
-1 & 1.29 & Bien condicionado \\
-5 & 1.67 & Bien condicionado \\
-10 & 1.82 & Bien condicionado \\
+1 & 1.29 & Bien cond. \\
+5 & 1.67 & Bien cond. \\
+10 & 1.82 & Bien cond. \\
 \hline
 \end{tabular}
-\caption{Número de condición del problema en diferentes instantes}
+\caption{Número de condición del problema}
 \label{tab:cond_number}
 \end{table}
 
@@ -408,75 +411,295 @@ El análisis del número de condición muestra que el problema está bien condic
 
 El campo de isoclinas en el plano $(t, v)$ muestra cómo la solución sigue las pendientes del campo. Esta visualización permite comprender geométricamente cómo evoluciona la velocidad con el tiempo bajo la influencia de la aceleración variable.
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{pictures/IsoCamp.png}
+\includegraphics[width=0.9\columnwidth]{pictures/IsoCamp.png}
 \caption{Campo de isoclinas para la ecuación diferencial de velocidad}
 \label{fig:isoclinas}
 \end{figure}
 
-\subsection{Comparación de Métodos Numéricos}
+\section{Parte B}
+\label{sec:parte_b}
 
-La siguiente figura muestra una comparación entre los diferentes métodos numéricos implementados (Euler, RK2 y RK4) y la solución analítica:
+\section{Parte C: Análisis de Estabilidad y Plano de Fase}
+\label{sec:parte_c}
 
-\begin{figure}[h]
+Consideramos el modelo matemático de un automóvil acoplado a un resorte con amortiguamiento, representado por el sistema de ecuaciones diferenciales:
+
+\begin{equation}
+\boxed{\begin{cases}
+\frac{dx}{dt} = v \\
+\frac{dv}{dt} = -\alpha v - \beta x
+\end{cases}}
+\end{equation}
+
+donde:
+- $x$: posición del sistema
+- $v$: velocidad del sistema  
+- $\alpha, \beta > 0$: parámetros físicos del modelo
+
+\subsection{Parámetros del Sistema}
+
+\begin{table}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{pictures/MethodsComparation.png}
-\caption{Comparación entre métodos numéricos y la solución analítica}
-\label{fig:comparacion_metodos}
-\end{figure}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Parámetro} & \textbf{Significado Físico} & \textbf{Efecto Dinámico} \\
+\hline
+$\alpha > 0$ & Coeficiente de amortiguamiento & Disipación de energía \\
+\hline
+$\beta > 0$ & Constante del resorte & Fuerza restauradora \\
+\hline
+\end{tabular}
+\caption{Parámetros del sistema masa-resorte-amortiguador}
+\label{tab:parametros}
+\end{table}
 
-\subsection{Análisis de Condicionamiento}
+\subsection{Análisis de Puntos de Equilibrio}
 
-El número de condición del problema se visualiza para entender la sensibilidad de la solución a pequeñas perturbaciones:
+\subsubsection{Determinación de Puntos Críticos}
 
-\begin{figure}[h]
+Los puntos de equilibrio se determinan cuando el sistema permanece estático:
+
+$$\frac{dx}{dt} = 0 \quad \text{y} \quad \frac{dv}{dt} = 0$$
+
+\textbf{Resolución paso a paso:}
+
+1. De $\frac{dx}{dt} = v = 0$ obtenemos: $v = 0$
+
+2. De $\frac{dv}{dt} = -\alpha v - \beta x = 0$ y sustituyendo $v = 0$:
+   $$- \alpha(0) - \beta x = 0 \Rightarrow x = 0$$
+
+\textbf{Resultado:} $\boxed{(x^*, v^*) = (0, 0) \text{ es el único punto de equilibrio}}$
+
+\subsection{Análisis de Estabilidad Lineal}
+
+\subsubsection{Linearización del Sistema}
+
+Para el sistema vectorial $\mathbf{F}(x,v) = \begin{pmatrix} v \\ -\alpha v - \beta x \end{pmatrix}$, calculamos la \textbf{matriz Jacobiana}:
+
+\textbf{Derivadas parciales:}
+
+\begin{table}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{pictures/CondNumber.png}
-\caption{Número de condición para el problema cinemático}
-\label{fig:cond_number}
-\end{figure}
+\begin{tabular}{|c|c|c|}
+\hline
+ & $\frac{\partial}{\partial x}$ & $\frac{\partial}{\partial v}$ \\
+\hline
+$F_1 = v$ & $0$ & $1$ \\
+\hline
+$F_2 = -\alpha v - \beta x$ & $-\beta$ & $-\alpha$ \\
+\hline
+\end{tabular}
+\caption{Derivadas parciales para la matriz Jacobiana}
+\label{tab:jacobiana}
+\end{table}
 
+\textbf{Matriz Jacobiana en el equilibrio:}
+$$\boxed{\mathbf{J}(0,0) = \begin{pmatrix} 0 & 1 \\ -\beta & -\alpha \end{pmatrix}}$$
 
-%-----------------------------------------------------------------------------------
-Para producir cuerpos flotantes (figuras o tablas), asegúrese de numerar
-y etiquetar correctamente cada figura. Las referencias a las figuras deben
-estar correctamente etiquetadas. Por ejemplo, véase la Fig. \ref{fig:ex}\ldots
+\subsubsection{Cálculo de Valores Propios}
 
-\begin{figure}[h!]%
-	\begin{center}
-		\begin{tabular}{|c|c|c|} \hline
-			& Método 1 	& Método 2 	\\ \hline
-			A 			&  			&  			\\ \hline
-			B			& 			& 			\\ \hline
-			C 			& 			&  			\\ \hline
-		\end{tabular}
-		\caption{Figura de ejemplo. Recuerde especificar el origen de los datos que se muestran. \label{fig:ex}}
-	\end{center}
-\end{figure}
-%-----------------------------------------------------------------------------------
+\textbf{Ecuación característica:} $\det(\mathbf{J} - \lambda \mathbf{I}) = 0$
 
-Para producir código fuente, envuélvalo en una figura flotante y
-etiquételo correctamente. Por ejemplo, en la Fig. \ref{fig:code}
-se muestra un código bastante conocido\ldots
+$$\det\begin{pmatrix} -\lambda & 1 \\ -\beta & -\alpha - \lambda \end{pmatrix} = (-\lambda)(-\alpha - \lambda) - (1)(-\beta) = \lambda^2 + \alpha\lambda + \beta = 0$$
 
-% Configuración de Listings
-\lstset{keywordstyle=\color{blue}, basicstyle=\small}
+\textbf{Aplicando la fórmula cuadrática:}
+$$\boxed{\lambda_{1,2} = \frac{-\alpha \pm \sqrt{\alpha^2 - 4\beta}}{2}}$$
 
-\begin{figure}[h!]%
-	\begin{lstlisting}[language=c]%
-		
-     int main(int argc, char** argv)
-     {
-         // Imprimiendo "Hola Mundo".
-         printf("Hello, World");
-     }
-		
-	\end{lstlisting}
-	\caption{Código fuente de ejemplo.\label{fig:code}}
-\end{figure}
+\textbf{Discriminante clave:} $\Delta = \alpha^2 - 4\beta$
 
-%===================================================================================
+\subsubsection{Interpretación de los Valores Propios}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Factor} & \textbf{Controla} & \textbf{Interpretación Física} \\
+\hline
+$\Delta = \alpha^2 - 4\beta$ & Naturaleza de convergencia & Tipo de amortiguamiento del sistema \\
+\hline
+$\text{Re}(\lambda) = -\alpha/2$ & Tasa de decaimiento & Velocidad de estabilización \\
+\hline
+$\text{Im}(\lambda)$ & Frecuencia de oscilación & Frecuencia natural (solo caso sub-amortiguado) \\
+\hline
+\end{tabular}
+\caption{Interpretación de los valores propios}
+\label{tab:interpretacion}
+\end{table}
+
+\subsection{Clasificación de la Estabilidad}
+
+\subsubsection{Fundamento Teórico}
+
+La \textbf{estabilidad asintótica} se determina por el signo de las partes reales de los valores propios.
+
+\textbf{Base matemática:} La solución general es $\mathbf{x}(t) = \sum_{i} c_i e^{\lambda_i t} \mathbf{v}_i$
+
+Para que $\lim_{t \to \infty} \|\mathbf{x}(t)\| = 0$, necesitamos $\text{Re}(\lambda_i) < 0 \, \forall i$.
+
+\subsubsection{Análisis por Discriminante}
+
+El comportamiento dinámico depende del \textbf{discriminante} $\boxed{\Delta = \alpha^2 - 4\beta}$:
+
+\paragraph{Caso 1: $\Delta > 0$ (Sistema sobre-amortiguado)}
+
+\textbf{Condición física:} El amortiguamiento domina sobre la elasticidad del resorte ($\alpha^2 > 4\beta$)
+
+\textbf{Valores propios:} Dos reales distintos
+$$\lambda_1 = \frac{-\alpha + \sqrt{\alpha^2 - 4\beta}}{2}, \quad \lambda_2 = \frac{-\alpha - \sqrt{\alpha^2 - 4\beta}}{2}$$
+
+\textbf{Análisis de estabilidad:}
+- Dado que $\beta > 0$: $\sqrt{\alpha^2 - 4\beta} < \sqrt{\alpha^2} = \alpha$
+- Por tanto: $\lambda_1 < 0$ y $\lambda_2 < 0$
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Clasificación} & \textbf{Comportamiento Físico} \\
+\hline
+Nodo estable & El sistema regresa al equilibrio sin oscilaciones, como un amortiguador muy eficiente \\
+\hline
+\end{tabular}
+\caption{Clasificación del caso sobre-amortiguado}
+\label{tab:sobre_amortiguado}
+\end{table}
+
+\paragraph{Caso 2: $\Delta = 0$ (Sistema críticamente amortiguado)}
+
+\textbf{Condición física:} Amortiguamiento óptimo, balance perfecto entre disipación y elasticidad ($\alpha^2 = 4\beta$)
+
+\textbf{Valor propio:} Real repetido
+$$\lambda = -\frac{\alpha}{2} < 0$$
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Clasificación} & \textbf{Comportamiento Físico} \\
+\hline
+Nodo crítico & Regreso más rápido posible al equilibrio sin oscilaciones (amortiguamiento óptimo) \\
+\hline
+\end{tabular}
+\caption{Clasificación del caso críticamente amortiguado}
+\label{tab:critico}
+\end{table}
+
+\paragraph{Caso 3: $\Delta < 0$ (Sistema sub-amortiguado)}
+
+\textbf{Condición física:} La elasticidad del resorte domina sobre el amortiguamiento ($\alpha^2 < 4\beta$)
+
+\textbf{Valores propios:} Par complejo conjugado
+$$\lambda_{1,2} = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}$$
+
+\textbf{Componentes:}
+- \textbf{Parte real:} $\text{Re}(\lambda) = -\frac{\alpha}{2} < 0$ (decaimiento exponencial)
+- \textbf{Parte imaginaria:} $\text{Im}(\lambda) = \pm\frac{\sqrt{4\beta - \alpha^2}}{2}$ (frecuencia de oscilación)
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Clasificación} & \textbf{Comportamiento Físico} \\
+\hline
+Foco estable (espiral) & El sistema oscila mientras regresa al equilibrio, como un resorte poco amortiguado \\
+\hline
+\end{tabular}
+\caption{Clasificación del caso sub-amortiguado}
+\label{tab:sub_amortiguado}
+\end{table}
+
+\subsection{Teorema de Estabilidad de Lyapunov}
+
+\subsubsection{Criterio Fundamental}
+
+> \textbf{Teorema:} Un punto de equilibrio es asintóticamente estable si y solo si todos los valores propios tienen parte real negativa: $\text{Re}(\lambda_i) < 0 \, \forall i$.
+
+\subsubsection{Verificación del Sistema}
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{|c|c|c|c|}
+\hline
+Caso & Condición & Valores Propios & Estabilidad \\
+\hline
+1 & $\Delta > 0$ & $\lambda_1, \lambda_2 < 0$ & \checkmark Estable \\
+\hline
+2 & $\Delta = 0$ & $\lambda = -\frac{\alpha}{2} < 0$ & \checkmark Estable \\
+\hline
+3 & $\Delta < 0$ & $\text{Re}(\lambda) = -\frac{\alpha}{2} < 0$ & \checkmark Estable \\
+\hline
+\end{tabular}
+\caption{Verificación de estabilidad según Lyapunov}
+\label{tab:lyapunov}
+\end{table*}
+
+\subsubsection{Conclusión}
+
+$$\boxed{\text{El sistema es globalmente asintóticamente estable para } \alpha, \beta > 0}$$
+
+\subsection{Plano de Fase}
+
+\subsubsection{Espacio de Estados}
+
+El \textbf{plano de fase} $(x, v)$ representa todos los estados posibles del sistema:
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Componente & Interpretación & Eje \\
+\hline
+$x$ & Posición & Horizontal \\
+\hline
+$v$ & Velocidad & Vertical \\
+\hline
+\end{tabular}
+\caption{Componentes del plano de fase}
+\label{tab:espacio_estados}
+\end{table}
+
+\subsubsection{Campo Vectorial}
+
+En cada punto $(x,v)$, el \textbf{vector de flujo} es:
+$$\boxed{\mathbf{F}(x,v) = \begin{pmatrix} v \\ -\alpha v - \beta x \end{pmatrix}}$$
+
+\textbf{Pendiente de trayectorias:}
+$$\frac{dv}{dx} = \frac{-\alpha v - \beta x}{v} \quad (v \neq 0)$$
+
+\subsubsection{Isoclinas Críticas}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Tipo & Condición & Ecuación \\
+\hline
+Horizontal & $\frac{dv}{dt} = 0$ & $\alpha v + \beta x = 0$ \\
+\hline
+Vertical & $\frac{dx}{dt} = 0$ & $v = 0$ \\
+\hline
+\end{tabular}
+\caption{Isoclinas críticas del sistema}
+\label{tab:isoclinas}
+\end{table}
+
+\textbf{Significado Físico de las Isoclinas Críticas:}
+
+\textbf{\textcolor{red}{Isoclina Horizontal} ($v = -\frac{\beta}{\alpha}x$):}
+- \textbf{¿Qué significa?} La velocidad NO cambia en esta línea ($dv/dt = 0$)
+- \textbf{Interpretación física:} Las fuerzas están equilibradas instantáneamente
+- \textbf{Comportamiento:} Las trayectorias cruzan esta línea horizontalmente
+
+\textbf{\textcolor{blue}{Isoclina Vertical} ($v = 0$):}
+- \textbf{¿Qué significa?} La posición NO cambia en esta línea ($dx/dt = 0$)  
+- \textbf{Interpretación física:} El sistema está momentáneamente en reposo
+- \textbf{Comportamiento:} Las trayectorias cruzan esta línea verticalmente
+
+\textbf{Intersección:} Donde se cruzan ambas isoclinas está el punto de equilibrio $(0,0)$, donde el sistema permanece estático para siempre.
+
 
 
 \label{end}
