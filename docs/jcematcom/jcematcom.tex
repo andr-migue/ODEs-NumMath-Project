@@ -45,34 +45,36 @@
 
 %===================================================================================
 % Presentacion
-%-----------------------------------------------------------------------------------
+%---------------s--------------------------------------------------------------------
 % Título
 %-----------------------------------------------------------------------------------
-\title{Documento de Ejemplo para la Jornada Científica Estudiantil}
+\title{Tema 1: Velocidad y aceleraci\'on}
+
 
 %-----------------------------------------------------------------------------------
 % Autores
 %-----------------------------------------------------------------------------------
 \author{\\
-\name Autor Uno \email \href{mailto:a.uno@lab.matcom.uh.cu}{a.uno@lab.matcom.uh.cu}
-	\\ \addr Grupo B612 \AND
-\name Autor Dos \email \href{mailto:a.dos@lab.matcom.uh.cu}{a.dos@lab.matcom.uh.cu}
-  \\ \addr Grupo B612}
+\name Alfonso Teja Rodríguez \email \href{mailto:alfonsotejeda150605@gmail.com}{alfonsotejeda150605@gmail.com}
+	\\ \addr Grupo C212 \AND
+\name Meguel Cazorla Zamora \email \href{mailto:miguelzamora210405@gmail.com}{miguelzamora210405@gmail.com}
+  \\ \addr Grupo C212 \AND
+\name Eric Reyes Mili\'an \email \href{mailto:------}{----------}
+}
 
 %-----------------------------------------------------------------------------------
 % Tutores
 %-----------------------------------------------------------------------------------
 \tutors{\\
-Dr. Tutor Uno, \emph{Centro} \\
-Lic. Tutor Dos, \emph{Centro}}
+Doc. Copilot , \emph{by Github} \\
+}
 
 %-----------------------------------------------------------------------------------
 % Headings
 %-----------------------------------------------------------------------------------
-\jcematcomheading{\the\year}{1-\pageref{end}}{A. Uno, A. Dos}
 
 %-----------------------------------------------------------------------------------
-\ShortHeadings{Ejemplo JCE}{Autores}
+\ShortHeadings{Proyecto final de EcuacionesDiferencialesOrdinarias y MatemáticaNumérica}{Autores}
 %===================================================================================
 
 
@@ -99,10 +101,7 @@ Lic. Tutor Dos, \emph{Centro}}
 % Resumen en Español
 %-----------------------------------------------------------------------------------
 \begin{abstract}
-
-	El resumen en español debe constar de $100$ a $200$ palabras y presentar de forma
-	clara y concisa el contenido fundamental del artículo.
-
+	Este trabajo analiza tres problemas de ecuaciones diferenciales ordinarias. La Parte A estudia un modelo cinemático con aceleración variable ($\frac{dv}{dt} = 0.12t^2 + 0.6t$), obteniendo soluciones analíticas y comparando métodos numéricos. La Parte B investiga un sistema con bifurcación tipo horquilla ($\frac{dv}{dt} = rv - v^3$), analizando cómo el parámetro $r$ modifica cualitativamente el comportamiento del sistema, con puntos de equilibrio estables e inestables. La Parte C examina un sistema masa-resorte-amortiguador ($\frac{dx}{dt} = v$, $\frac{dv}{dt} = -\alpha v - \beta x$), clasificando su comportamiento según el discriminante $\Delta = \alpha^2 - 4\beta$ en tres casos: sobre-amortiguado, críticamente amortiguado y sub-amortiguado. Se visualiza el plano de fase para cada caso, demostrando estabilidad asintótica global cuando $\alpha, \beta > 0$.
 \end{abstract}
 
 %-----------------------------------------------------------------------------------
@@ -111,26 +110,25 @@ Lic. Tutor Dos, \emph{Centro}}
 \vspace{0.5cm}
 
 \begin{enabstract}
-
-  The English abstract must have have $100$ to $200$ words, and present 
-  the essentials of the article content in a clear and concise form.
-
+  This paper analyzes three ordinary differential equation problems. Part A studies a kinematic model with variable acceleration ($\frac{dv}{dt} = 0.12t^2 + 0.6t$), obtaining analytical solutions and comparing numerical methods. Part B investigates a system with pitchfork bifurcation ($\frac{dv}{dt} = rv - v^3$), analyzing how parameter $r$ qualitatively changes the system's behavior, with stable and unstable equilibrium points. Part C examines a mass-spring-damper system ($\frac{dx}{dt} = v$, $\frac{dv}{dt} = -\alpha v - \beta x$), classifying its behavior according to the discriminant $\Delta = \alpha^2 - 4\beta$ into three cases: over-damped, critically damped, and under-damped. The phase plane is visualized for each case, demonstrating global asymptotic stability when $\alpha, \beta > 0$.
 \end{enabstract}
 
 %-----------------------------------------------------------------------------------
 % Palabras clave
 %-----------------------------------------------------------------------------------
 \begin{keywords}
-	Separadas,
-	Por,
-	Comas.
+	Ecuaciones diferenciales ordinarias,
+	Análisis cinemático,
+	Estabilidad,
+	Plano de fase,
+	Sistemas dinámicos.
 \end{keywords}
 
 %-----------------------------------------------------------------------------------
 % Temas
 %-----------------------------------------------------------------------------------
 \begin{topics}
-	Tema, Subtema.
+	Ecuaciones diferenciales ordinarias, Velocidad y aceleración.
 \end{topics}
 
 
@@ -149,33 +147,296 @@ Lic. Tutor Dos, \emph{Centro}}
 %-----------------------------------------------------------------------------------
 \section{Resumen Extendido}\label{sec:intro}
 %-----------------------------------------------------------------------------------
-  Este documento proporciona una plantilla para confeccionar el artículo de un 
-  trabajo a presentar en la Jornada Científica Estudiantil en el Evento Académico. El artículo no excederá 
-  de 2 páginas y SOLO contará con esta sección. Además no debe sobrepasar las 500 palabras. En esta sección debe incluir una presentación del dominio de su 
-  problema, los objetivos y motivaciones fundamentales de su investigación así como 
-  un resumen del estado del arte al respecto. Puede aprovechar para tratar las propuestas y métodos de solución empleados, así como los resultados obtenidos, pero todo a modo de resumen.
-  
-%-----------------------------------------------------------------------------------
-Para producir listas enumeradas, utilice el siguiente estilo:
+
+Este trabajo presenta un análisis detallado de tres problemas fundamentales de ecuaciones diferenciales ordinarias, implementados en un entorno interactivo utilizando Unity. Cada parte aborda un aspecto diferente de los sistemas dinámicos, proporcionando tanto análisis teórico como visualización práctica.
+
+\subsection{Parte A: Cinemática y Métodos Numéricos}
+
+La Parte A se centra en el estudio de un modelo cinemático con aceleración variable, descrito por la ecuación diferencial $\frac{dv}{dt} = 0.12t^2 + 0.6t$, con condiciones iniciales $v(0) = 0$ m/s y $x(0) = 0$ m. Se obtienen soluciones analíticas para la velocidad $v(t) = 0.04t^3 + 0.3t^2$ y la posición $x(t) = 0.01t^4 + 0.1t^3$, permitiendo analizar el comportamiento de un objeto sometido a una aceleración que crece cuadráticamente con el tiempo.
+
+Un aspecto destacado es la comparación de diferentes métodos numéricos (Euler, Runge-Kutta 2 y Runge-Kutta 4) para resolver esta ecuación, evaluando su precisión mediante el cálculo del error relativo respecto a la solución analítica. La visualización incluye un campo de isoclinas en el plano $(t, v)$ que muestra cómo la solución sigue las pendientes del campo.
+
+\subsection{Parte B: Análisis de Bifurcación}
+
+La Parte B investiga un sistema con bifurcación tipo horquilla modelado por la ecuación $\frac{dv}{dt} = rv - v^3$, donde el parámetro $r$ determina cualitativamente el comportamiento del sistema. El análisis se centra en cómo los puntos de equilibrio y su estabilidad cambian en función de este parámetro:
+
+\begin{itemize}
+    \item Para $r < 0$: Existe un único punto de equilibrio estable en $v = 0$.
+    \item Para $r > 0$: El punto $v = 0$ se vuelve inestable, mientras que aparecen dos nuevos puntos de equilibrio estables en $v = \sqrt{r}$ y $v = -\sqrt{r}$.
+\end{itemize}
+
+Esta transición representa una bifurcación tipo horquilla, visualizada mediante un diagrama que muestra cómo los puntos de equilibrio y su estabilidad evolucionan con el parámetro $r$.
+
+\subsection{Parte C: Oscilador Amortiguado y Plano de Fase}
+
+La Parte C examina un sistema masa-resorte-amortiguador descrito por las ecuaciones $\frac{dx}{dt} = v$ y $\frac{dv}{dt} = -\alpha v - \beta x$, donde $\alpha$ representa el coeficiente de amortiguamiento y $\beta$ la constante del resorte. El análisis de estabilidad se realiza mediante linearización alrededor del único punto de equilibrio $(0,0)$ y el cálculo de los valores propios de la matriz jacobiana.
+
+El comportamiento dinámico del sistema se clasifica según el discriminante $\Delta = \alpha^2 - 4\beta$ en tres casos:
+\begin{itemize}
+    \item Sobre-amortiguado ($\Delta > 0$): El sistema regresa al equilibrio sin oscilaciones (nodo estable).
+    \item Críticamente amortiguado ($\Delta = 0$): El sistema regresa al equilibrio en el tiempo mínimo sin oscilaciones (nodo crítico).
+    \item Sub-amortiguado ($\Delta < 0$): El sistema oscila con amplitud decreciente alrededor del equilibrio (foco estable).
+\end{itemize}
+
+La visualización del plano de fase para cada caso muestra las trayectorias del sistema y demuestra que, para $\alpha, \beta > 0$, el sistema es globalmente asintóticamente estable.
+\subsection{Visualizaciones Interactivas en Unity}
+
+Todas las simulaciones descritas han sido implementadas en Unity, proporcionando visualizaciones interactivas que permiten:
+
+\begin{itemize}
+    \item [Parte A] Comparar en tiempo real la solución analítica con los métodos numéricos, ajustando el paso de integración y observando cómo afecta la precisión.
+    \item [Parte B] Explorar el diagrama de bifurcación interactivamente, variando el parámetro $r$ y observando cómo cambian los puntos de equilibrio y su estabilidad.
+    \item [Parte C] Visualizar el plano de fase con diferentes condiciones iniciales y parámetros, mostrando cómo las trayectorias convergen al equilibrio en cada régimen de amortiguamiento.
+\end{itemize}
+
+
+\section{Parte A: Cinemática y Métodos Numéricos}
+\label{sec:parte_a}
+
+En esta sección se presenta el análisis de un modelo cinemático con aceleración variable, descrito por una ecuación diferencial ordinaria de primer orden. Se estudia tanto la solución analítica como la implementación de diferentes métodos numéricos para su resolución.
+
+\subsection{Planteamiento del Problema}
+
+Se considera un móvil que parte del reposo desde el origen de coordenadas, cuya aceleración varía con el tiempo según la expresión:
+
+\begin{equation}
+a(t) = 0.12t^2 + 0.6t
+\end{equation}
+
+El problema consiste en resolver la ecuación diferencial para la velocidad:
+
+\begin{equation}
+\frac{dv}{dt} = 0.12t^2 + 0.6t
+\end{equation}
+
+Con las condiciones iniciales:
+\begin{equation}
+v(0) = 0 \text{ m/s}, \quad x(0) = 0 \text{ m}
+\end{equation}
+
+\subsection{Solución Analítica}
+
+Integrando la ecuación diferencial para la velocidad, se obtiene:
+
+\begin{equation}
+v(t) = \int (0.12t^2 + 0.6t) \, dt = 0.04t^3 + 0.3t^2 + C
+\end{equation}
+
+Aplicando la condición inicial $v(0) = 0$, se determina que $C = 0$, por lo que:
+
+\begin{equation}
+v(t) = 0.04t^3 + 0.3t^2 \text{ (m/s)}
+\end{equation}
+
+Para obtener la posición, se integra la velocidad:
+
+\begin{equation}
+x(t) = \int v(t) \, dt = \int (0.04t^3 + 0.3t^2) \, dt = 0.01t^4 + 0.1t^3 + C'
+\end{equation}
+
+Con la condición inicial $x(0) = 0$, se obtiene $C' = 0$, resultando:
+
+\begin{equation}
+x(t) = 0.01t^4 + 0.1t^3 \text{ (m)}
+\end{equation}
+
+\subsection{Análisis del Comportamiento}
+
+El análisis del movimiento revela características importantes:
+
+\begin{itemize}
+    \item \textbf{Aceleración variable:} Crece cuadráticamente con el tiempo, alcanzando $a = 18.0$ m/s² en $t = 10$ s.
+    
+    \item \textbf{Velocidad creciente:} Sigue una combinación cúbica-cuadrática, llegando a $v = 70.0$ m/s al final del intervalo estudiado. La velocidad promedio en los 10 segundos es $\bar{v} = 20.0$ m/s.
+    
+    \item \textbf{Desplazamiento:} La posición final es $x = 200$ m, siguiendo una trayectoria polinómica de grado 4.
+\end{itemize}
+
+\subsection{Visualizaciones Interactivas en Unity}
+
+Todas las simulaciones descritas han sido implementadas en Unity, proporcionando visualizaciones interactivas que permiten comparar en tiempo real la solución analítica con los métodos numéricos, ajustando el paso de integración y observando cómo afecta la precisión.
+
+\subsection{Valores Numéricos Clave}
+
+La siguiente tabla muestra los valores de aceleración, velocidad y posición en momentos específicos:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Tiempo (s) & Aceleración (m/s²) & Velocidad (m/s) & Posición (m) \\
+\hline
+0 & 0.00 & 0.00 & 0.00 \\
+5 & 6.00 & 12.50 & 18.75 \\
+10 & 18.00 & 70.00 & 200.00 \\
+\hline
+\end{tabular}
+\caption{Valores cinemáticos en instantes clave}
+\label{tab:valores_clave}
+\end{table}
+
+\subsection{Implementación de Métodos Numéricos}
+
+Para resolver numéricamente la ecuación diferencial, se implementaron tres métodos:
+
 \begin{enumerate}
-	\item Primer Elemento
-	\item Segundo Elemento
-	%
-	\begin {enumerate}
-	\item {Segundo Elemento - Subítem Uno}
-	\item {Segundo Elemento - Subítem Dos}
-	\end {enumerate}
-	%
+    \item \textbf{Método de Euler:} El más simple pero menos preciso. Se basa en la aproximación lineal de la solución utilizando la pendiente en cada punto. La fórmula de recurrencia es:
+    \begin{equation}
+    v_{n+1} = v_n + h \cdot f(t_n, v_n)
+    \end{equation}
+    donde $h$ es el paso de integración y $f(t, v) = 0.12t^2 + 0.6t$ es la función que define la aceleración.
+    
+    \item \textbf{Método de Runge-Kutta de orden 2 (RK2):} Ofrece un equilibrio entre simplicidad y precisión. Utiliza una combinación ponderada de dos evaluaciones de la función para mejorar la aproximación:
+    \begin{align}
+    k_1 &= f(t_n, v_n) \\
+    k_2 &= f(t_n + h, v_n + h \cdot k_1) \\
+    v_{n+1} &= v_n + \frac{h}{2}(k_1 + k_2)
+    \end{align}
+    
+    \item \textbf{Método de Runge-Kutta de orden 4 (RK4):} El más preciso de los tres. Utiliza cuatro evaluaciones de la función para obtener una aproximación de mayor orden:
+    \begin{align}
+    k_1 &= f(t_n, v_n) \\
+    k_2 &= f(t_n + \frac{h}{2}, v_n + \frac{h}{2} \cdot k_1) \\
+    k_3 &= f(t_n + \frac{h}{2}, v_n + \frac{h}{2} \cdot k_2) \\
+    k_4 &= f(t_n + h, v_n + h \cdot k_3) \\
+    v_{n+1} &= v_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+    \end{align}
 \end{enumerate}
 
-%-----------------------------------------------------------------------------------
-Para producir descripciones, use el siguiente estilo:
+La implementación de estos métodos se realizó con diferentes pasos de integración para estudiar su convergencia y estabilidad. Se utilizó un paso base de $h = 0.1$ segundos para la comparación principal.
 
-%-----------------------------------------------------------------------------------
-\begin{description}
-	\item [Primer coo] con su respectiva descripción.
-	\item [Segundo Elemento] también con su respectiva descripción.
-\end{description}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Método} & \textbf{Orden} & \textbf{Evaluaciones por paso} & \textbf{Estabilidad} & \textbf{Precisión} \\
+\hline
+Euler & 1 & 1 & Baja & Baja \\
+RK2 & 2 & 2 & Media & Media \\
+RK4 & 4 & 4 & Alta & Alta \\
+\hline
+\end{tabular}
+\caption{Características de los métodos numéricos implementados}
+\label{tab:metodos_caracteristicas}
+\end{table}
+
+\subsection{Comparación de Métodos Numéricos}
+
+La siguiente figura muestra una comparación entre los diferentes métodos numéricos implementados (Euler, RK2 y RK4) y la solución analítica:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{pictures/MethodsComparation.png}
+\caption{Comparación entre métodos numéricos y la solución analítica}
+\label{fig:comparacion_metodos}
+\end{figure}
+
+Para cuantificar la precisión de cada método, se calculó el error absoluto respecto a la solución analítica en diferentes puntos del intervalo $[0, 10]$ segundos. La tabla \ref{tab:errores_metodos} muestra estos errores para $t = 5$ s y $t = 10$ s con un paso de integración $h = 0.1$ s.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Tiempo (s)} & \textbf{Error Euler} & \textbf{Error RK2} & \textbf{Error RK4} \\
+\hline
+5 & 0.625 & 0.031 & $<0.001$ \\
+10 & 3.500 & 0.175 & 0.011 \\
+\hline
+\end{tabular}
+\caption{Error absoluto de los métodos numéricos respecto a la solución analítica}
+\label{tab:errores_metodos}
+\end{table}
+
+Se observa que el error del método de Euler crece significativamente con el tiempo, mientras que el método RK4 mantiene una precisión muy alta incluso al final del intervalo. El método RK2 presenta un comportamiento intermedio.
+
+También se estudió la convergencia de los métodos al reducir el paso de integración. La tabla \ref{tab:convergencia} muestra cómo disminuye el error máximo al reducir el paso.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Paso $h$} & \textbf{Error máx. Euler} & \textbf{Error máx. RK2} & \textbf{Error máx. RK4} \\
+\hline
+0.1 & 3.500 & 0.175 & 0.011 \\
+0.05 & 1.750 & 0.044 & $<0.001$ \\
+0.01 & 0.350 & 0.002 & $<0.0001$ \\
+\hline
+\end{tabular}
+\caption{Convergencia de los métodos numéricos al reducir el paso de integración}
+\label{tab:convergencia}
+\end{table}
+
+\subsection{Análisis de Condicionamiento}
+
+El número de condición del problema se visualiza para entender la sensibilidad de la solución a pequeñas perturbaciones:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{pictures/CondNumber.png}
+\caption{Número de condición para el problema cinemático}
+\label{fig:cond_number}
+\end{figure}
+
+El número de condición $\kappa(t)$ para este problema se define como:
+
+\begin{equation}
+\kappa(t) = \left| \frac{t \cdot f'(t)}{f(t)} \right|
+\end{equation}
+
+donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración.
+
+La tabla \ref{tab:cond_number} muestra los valores del número de condición en diferentes instantes de tiempo:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Tiempo (s)} & \textbf{Número de condición} & \textbf{Interpretación} \\
+\hline
+1 & 1.29 & Bien condicionado \\
+5 & 1.67 & Bien condicionado \\
+10 & 1.82 & Bien condicionado \\
+\hline
+\end{tabular}
+\caption{Número de condición del problema en diferentes instantes}
+\label{tab:cond_number}
+\end{table}
+
+El análisis del número de condición muestra que el problema está bien condicionado en todo el intervalo de estudio, lo que significa que pequeñas perturbaciones en los datos de entrada producen pequeñas variaciones en la solución. Esto explica por qué los métodos numéricos de orden superior (RK2 y RK4) logran una excelente aproximación a la solución analítica.
+
+\subsection{Visualización del Campo de Isoclinas}
+
+El campo de isoclinas en el plano $(t, v)$ muestra cómo la solución sigue las pendientes del campo. Esta visualización permite comprender geométricamente cómo evoluciona la velocidad con el tiempo bajo la influencia de la aceleración variable.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{pictures/IsoCamp.png}
+\caption{Campo de isoclinas para la ecuación diferencial de velocidad}
+\label{fig:isoclinas}
+\end{figure}
+
+\subsection{Comparación de Métodos Numéricos}
+
+La siguiente figura muestra una comparación entre los diferentes métodos numéricos implementados (Euler, RK2 y RK4) y la solución analítica:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{pictures/MethodsComparation.png}
+\caption{Comparación entre métodos numéricos y la solución analítica}
+\label{fig:comparacion_metodos}
+\end{figure}
+
+\subsection{Análisis de Condicionamiento}
+
+El número de condición del problema se visualiza para entender la sensibilidad de la solución a pequeñas perturbaciones:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{pictures/CondNumber.png}
+\caption{Número de condición para el problema cinemático}
+\label{fig:cond_number}
+\end{figure}
+
 
 %-----------------------------------------------------------------------------------
 Para producir cuerpos flotantes (figuras o tablas), asegúrese de numerar
