@@ -2,18 +2,28 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+# Unity project folders (original patterns for root-level Unity projects)
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# Unity project folders (specific to unity/CarSimulation/ subdirectory)
+unity/CarSimulation/[Ll]ibrary/
+unity/CarSimulation/[Tt]emp/
+unity/CarSimulation/[Oo]bj/
+unity/CarSimulation/[Ll]ogs/
+unity/CarSimulation/[Uu]ser[Ss]ettings/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
+unity/CarSimulation/[Mm]emoryCaptures/
 
 # Recordings can get excessive in size
 /[Rr]ecordings/
+unity/CarSimulation/[Rr]ecordings/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
