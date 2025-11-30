@@ -121,7 +121,7 @@ $
 \dot v = -\alpha v - \beta x.
 $
 
-> "Esto es un sistema lineal de segundo orden"
+> "Esto es un sistema lineal de primer orden"
 
 dijo Eric.
 
@@ -151,7 +151,7 @@ Alfonso añadió:
 ---
 
 ## 🎉 **Final**
-A las **11:57 pm**, tres minutos antes del cierre, terminaron todo el análisis:
+A las **11:57 am**, tres minutos antes del cierre, terminaron todo el análisis:
 
 * Cinemática del auto
 * Plano de fase resorte–amortiguador
