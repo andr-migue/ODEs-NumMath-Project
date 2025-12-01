@@ -1,26 +1,5 @@
-%===================================================================================
-% JORNADA CIENTÍFICA ESTUDIANTIL - MATCOM, UH
-%===================================================================================
-% Esta plantilla ha sido diseñada para ser usada en los artículos de la
-% Jornada Científica Estudiantil de MatCom.
-%
-% Por favor, siga las instrucciones de esta plantilla y rellene en las secciones
-% correspondientes.
-%
-% NOTA: Necesitará el archivo 'jcematcom.sty' en la misma carpeta donde esté este
-%       archivo para poder utilizar esta plantila.
-%===================================================================================
-
-
-
-%===================================================================================
-% PREÁMBULO
-%-----------------------------------------------------------------------------------
 \documentclass[a4paper,10pt,twocolumn]{article}
 
-%===================================================================================
-% Paquetes
-%-----------------------------------------------------------------------------------
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -30,99 +9,57 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{array}
-\usepackage{xcolor}
-\usepackage{geometry}
-\geometry{margin=1in}
 \usepackage{float}
-%-----------------------------------------------------------------------------------
-% Configuración
-%-----------------------------------------------------------------------------------
+
+\captionsetup[table]{name=Tabla}
+
+\raggedbottom
+
 \hypersetup{colorlinks,%
 	    citecolor=black,%
 	    filecolor=black,%
 	    linkcolor=black,%
 	    urlcolor=blue}
 
-%===================================================================================
 
+\title{Empanada Acelerada.}
 
-
-%===================================================================================
-% Presentacion
-%---------------s--------------------------------------------------------------------
-% Título
-%-----------------------------------------------------------------------------------
-\title{Tema 1: Velocidad y aceleraci\'on}
-
-
-%-----------------------------------------------------------------------------------
-% Autores
-%-----------------------------------------------------------------------------------
 \author{\\
 \name Alfonso Teja Rodríguez \email \href{mailto:alfonsotejeda150605@gmail.com}{alfonsotejeda150605@gmail.com}
 	\\ \addr Grupo C212 \AND
 \name Meguel Cazorla Zamora \email \href{mailto:miguelzamora210405@gmail.com}{miguelzamora210405@gmail.com}
   \\ \addr Grupo C212 \AND
-\name Eric Reyes Mili\'an \email \href{mailto:------}{----------}
+\name Eric Reyes Mili\'an \email \href{mailto:ericreyes@gmail.com}{ericreyes@gmail.com}
+\\ \addr Grupo C212 \AND
 }
 
-%-----------------------------------------------------------------------------------
-% Tutores
-%-----------------------------------------------------------------------------------
 \tutors{\\
 Doc. Copilot , \emph{by Github} \\
 }
 
-%-----------------------------------------------------------------------------------
-% Headings
-%-----------------------------------------------------------------------------------
+\ShortHeadings{Ecuaciones Diferenciales Ordinarias y Matemática Numérica}{Autores}
 
-%-----------------------------------------------------------------------------------
-\ShortHeadings{Proyecto final de EcuacionesDiferencialesOrdinarias y MatemáticaNumérica}{Autores}
-%===================================================================================
-
-
-
-%===================================================================================
-% DOCUMENTO
-%-----------------------------------------------------------------------------------
 \begin{document}
 
-%-----------------------------------------------------------------------------------
-% NO BORRAR ESTA LINEA!
-%-----------------------------------------------------------------------------------
 \twocolumn[
-%-----------------------------------------------------------------------------------
 
 \maketitle
 
-%===================================================================================
-% Resumen y Abstract
-%-----------------------------------------------------------------------------------
-\selectlanguage{spanish} % Para producir el documento en Español
+\selectlanguage{spanish} 
 
-%-----------------------------------------------------------------------------------
-% Resumen en Español
-%-----------------------------------------------------------------------------------
 \begin{abstract}
-	Este trabajo analiza tres problemas de ecuaciones diferenciales ordinarias. La Parte A estudia un modelo cinemático con aceleración variable ($\frac{dv}{dt} = 0.12t^2 + 0.6t$), obteniendo soluciones analíticas y comparando métodos numéricos. La Parte B investiga un sistema con bifurcación tipo horquilla ($\frac{dv}{dt} = rv - v^3$), analizando cómo el parámetro $r$ modifica cualitativamente el comportamiento del sistema, con puntos de equilibrio estables e inestables. La Parte C examina un sistema masa-resorte-amortiguador ($\frac{dx}{dt} = v$, $\frac{dv}{dt} = -\alpha v - \beta x$), clasificando su comportamiento según el discriminante $\Delta = \alpha^2 - 4\beta$ en tres casos: sobre-amortiguado, críticamente amortiguado y sub-amortiguado. Se visualiza el plano de fase para cada caso, demostrando estabilidad asintótica global cuando $\alpha, \beta > 0$.
+
+Este trabajo analiza tres problemas de ecuaciones diferenciales ordinarias. La Parte A estudia un modelo cinemático con aceleración variable ($\frac{dv}{dt} = 0.12t^2 + 0.6t$), obteniendo soluciones analíticas y comparando métodos numéricos. La Parte B investiga un sistema con bifurcación tipo horquilla ($\frac{dv}{dt} = rv - v^3$), analizando cómo el parámetro $r$ modifica cualitativamente el comportamiento del sistema, con puntos de equilibrio estables e inestables. La Parte C examina un sistema masa-resorte-amortiguador ($\frac{dx}{dt} = v$, $\frac{dv}{dt} = -\alpha v - \beta x$), clasificando su comportamiento según el discriminante $\Delta = \alpha^2 - 4\beta$ en tres casos: sobre-amortiguado, críticamente amortiguado y sub-amortiguado. Se visualiza el plano de fase para cada caso, demostrando estabilidad asintótica global cuando $\alpha, \beta > 0$.
 \end{abstract}
 
-%-----------------------------------------------------------------------------------
-% English Abstract
-%-----------------------------------------------------------------------------------
 \vspace{0.5cm}
 
 \begin{enabstract}
+
   This paper analyzes three ordinary differential equation problems. Part A studies a kinematic model with variable acceleration ($\frac{dv}{dt} = 0.12t^2 + 0.6t$), obtaining analytical solutions and comparing numerical methods. Part B investigates a system with pitchfork bifurcation ($\frac{dv}{dt} = rv - v^3$), analyzing how parameter $r$ qualitatively changes the system's behavior, with stable and unstable equilibrium points. Part C examines a mass-spring-damper system ($\frac{dx}{dt} = v$, $\frac{dv}{dt} = -\alpha v - \beta x$), classifying its behavior according to the discriminant $\Delta = \alpha^2 - 4\beta$ into three cases: over-damped, critically damped, and under-damped. The phase plane is visualized for each case, demonstrating global asymptotic stability when $\alpha, \beta > 0$.
 \end{enabstract}
 
-%-----------------------------------------------------------------------------------
-% Palabras clave
-%-----------------------------------------------------------------------------------
 \begin{keywords}
 	Ecuaciones diferenciales ordinarias,
 	Análisis cinemático,
@@ -131,99 +68,33 @@ Doc. Copilot , \emph{by Github} \\
 	Sistemas dinámicos.
 \end{keywords}
 
-%-----------------------------------------------------------------------------------
-% Temas
-%-----------------------------------------------------------------------------------
 \begin{topics}
 	Ecuaciones diferenciales ordinarias, Velocidad y aceleración.
 \end{topics}
 
-
-%-----------------------------------------------------------------------------------
-% NO BORRAR ESTAS LINEAS!
-%-----------------------------------------------------------------------------------
 \vspace{0.8cm}
 ]
-%-----------------------------------------------------------------------------------
 
+\section*{La Misión: Un Viaje a Contrarreloj}
 
-%===================================================================================
+Era una tarde nublada típica de MATCOM cuando \textbf{Alfonso}, \textbf{Eric} y \textbf{Miguel} recibieron un mensaje inesperado que cambiaría su destino académico (y, más importante aún, su acceso a las empanadas de la cafetería). 
 
-%===================================================================================
-% Resumen Extendido
-%-----------------------------------------------------------------------------------
-\section{Resumen Extendido}\label{sec:intro}
-%-----------------------------------------------------------------------------------
-
-Este trabajo presenta un análisis detallado de tres problemas fundamentales de ecuaciones diferenciales ordinarias, implementados en un entorno interactivo utilizando Unity. Cada parte aborda un aspecto diferente de los sistemas dinámicos, proporcionando tanto análisis teórico como visualización práctica.
-
-\subsection{Parte A: Cinemática y Métodos Numéricos}
-
-La Parte A se centra en el estudio de un modelo cinemático con aceleración variable, descrito por la ecuación diferencial $\frac{dv}{dt} = 0.12t^2 + 0.6t$, con condiciones iniciales $v(0) = 0$ m/s y $x(0) = 0$ m. Se obtienen soluciones analíticas para la velocidad $v(t) = 0.04t^3 + 0.3t^2$ y la posición $x(t) = 0.01t^4 + 0.1t^3$, permitiendo analizar el comportamiento de un objeto sometido a una aceleración que crece cuadráticamente con el tiempo.
-
-Un aspecto destacado es la comparación de diferentes métodos numéricos (Euler, Runge-Kutta 2 y Runge-Kutta 4) para resolver esta ecuación, evaluando su precisión mediante el cálculo del error relativo respecto a la solución analítica. La visualización incluye un campo de isoclinas en el plano $(t, v)$ que muestra cómo la solución sigue las pendientes del campo.
-
-\subsection{Parte B: Análisis de Bifurcación}
-
-La Parte B investiga un sistema con bifurcación tipo horquilla modelado por la ecuación $\frac{dv}{dt} = rv - v^3$, donde el parámetro $r$ determina cualitativamente el comportamiento del sistema. El análisis se centra en cómo los puntos de equilibrio y su estabilidad cambian en función de este parámetro:
-
-\begin{itemize}
-    \item Para $r < 0$: Existe un único punto de equilibrio estable en $v = 0$.
-    \item Para $r > 0$: El punto $v = 0$ se vuelve inestable, mientras que aparecen dos nuevos puntos de equilibrio estables en $v = \sqrt{r}$ y $v = -\sqrt{r}$.
-\end{itemize}
-
-Esta transición representa una bifurcación tipo horquilla, visualizada mediante un diagrama que muestra cómo los puntos de equilibrio y su estabilidad evolucionan con el parámetro $r$.
-
-\subsection{Parte C: Oscilador Amortiguado y Plano de Fase}
-
-La Parte C examina un sistema masa-resorte-amortiguador descrito por las ecuaciones $\frac{dx}{dt} = v$ y $\frac{dv}{dt} = -\alpha v - \beta x$, donde $\alpha$ representa el coeficiente de amortiguamiento y $\beta$ la constante del resorte. El análisis de estabilidad se realiza mediante linearización alrededor del único punto de equilibrio $(0,0)$ y el cálculo de los valores propios de la matriz jacobiana.
-
-El comportamiento dinámico del sistema se clasifica según el discriminante $\Delta = \alpha^2 - 4\beta$ en tres casos:
-\begin{itemize}
-    \item Sobre-amortiguado ($\Delta > 0$): El sistema regresa al equilibrio sin oscilaciones (nodo estable).
-    \item Críticamente amortiguado ($\Delta = 0$): El sistema regresa al equilibrio en el tiempo mínimo sin oscilaciones (nodo crítico).
-    \item Sub-amortiguado ($\Delta < 0$): El sistema oscila con amplitud decreciente alrededor del equilibrio (foco estable).
-\end{itemize}
-
-La visualización del plano de fase para cada caso muestra las trayectorias del sistema y demuestra que, para $\alpha, \beta > 0$, el sistema es globalmente asintóticamente estable.
-\subsection{Visualizaciones Interactivas en Unity}
-
-Todas las simulaciones descritas han sido implementadas en Unity, proporcionando visualizaciones interactivas que permiten:
-
-\begin{itemize}
-    \item [Parte A] Comparar en tiempo real la solución analítica con los métodos numéricos, ajustando el paso de integración y observando cómo afecta la precisión.
-    \item [Parte B] Explorar el diagrama de bifurcación interactivamente, variando el parámetro $r$ y observando cómo cambian los puntos de equilibrio y su estabilidad.
-    \item [Parte C] Visualizar el plano de fase con diferentes condiciones iniciales y parámetros, mostrando cómo las trayectorias convergen al equilibrio en cada régimen de amortiguamiento.
-\end{itemize}
-
-%===================================================================================
-\section{La Misión: Un Viaje a Contrarreloj}
-%===================================================================================
-
-\subsection*{Una tarde de presión en MATCOM}
-
-Era una tarde nublada típica de MATCOM cuando \textbf{Alfonso Teja}, \textbf{Eric Reyes} y \textbf{Miguel Cazorla} recibieron un mensaje inesperado que cambiaría su destino académico (y, más importante aún, su acceso a las empanadas de la cafetería). 
-
-Los profesores \textbf{Fernando} y \textbf{Amanda} de Matemática Numérica, junto con \textbf{Annia} y \textbf{Jackson} de Ecuaciones Diferenciales, se reunieron con ellos en el aula de laboratorio a las 11:00 am con una misión urgente:
+Los profesores \textbf{Fernando} y \textbf{Amanda} de Matemática Numérica, junto con \textbf{Ania} y \textbf{Jackson} de Ecuaciones Diferenciales, se reunieron con ellos en el aula de laboratorio a las 11:00 am con una misión urgente:
 
 \begin{center}
 \textit{``Equipo: su misión de hoy es resolver la dinámica completa de un automóvil diesel, desde su aceleración hasta su comportamiento oscilatorio. Ah, y háganlo antes de que cierre la cafetería a las 12:00 pm. Si lo logran, las empanadas corren por cuenta de los profesores.''}
 \end{center}
 
-Los tres se miraron. \textbf{Una hora de margen}. La presión era real: \textbf{si no terminaban, se quedaban sin empanadas}.
-
-\subsection*{El reparto de tareas}
-
-La estrategia fue dividir y conquistar. Los profesores asignaron:
+Los tres se miraron. Una hora de margen. La presión era real: si no terminaban, se quedaban sin empanadas. La estrategia fue dividir y conquistar.
 
 \begin{description}
-    \item[\textbf{Alfonso Teja --- Parte A: Cinemática Directa}] ``El arranque del auto''
+    \item[\textbf{Alfonso - Parte A: Cinemática Directa}] ``El arranque del auto''
     
     La misión de Alfonso era la más directa: resolver la dinámica de un auto diesel acelerado por una función $\frac{dv}{dt} = 0.12t^2 + 0.6t$. Tenía que integrar, calcular, visualizar. Un trabajo analítico donde la matemática fluía como el diesel en los cilindros del motor.
     
     Alfonso asintió con confianza. Siempre le habían gustado los números.
     
-    \item[\textbf{Eric Reyes --- Parte B: Bifurcación Pitchfork}] ``Cuando el motor decide''
+    \item[\textbf{Eric - Parte B: Bifurcación Pitchfork}] ``Cuando el motor decide''
     
     Eric recibió la ecuación $\frac{dv}{dt} = rv - v^3$, un sistema donde pequeños cambios en $r$ provocaban transformaciones radicales. Los profesores le advirtieron solemnemente:
     
@@ -233,78 +104,21 @@ La estrategia fue dividir y conquistar. Los profesores asignaron:
     
     Eric sonrió nerviosamente. Era su punto débil más evidente. (Miguel murmuró: ``Al menos es honesto sobre sus limitaciones.'')
     
-    \item[\textbf{Miguel Cazorla --- Parte C: Resorte Amortiguado}] ``El comportamiento oscilatorio''
+    \item[\textbf{Miguel - Parte C: Resorte Amortiguado}] ``El comportamiento oscilatorio''
     
     A Miguel le tocó el sistema más complejo: $\dot{x} = v$, $\dot{v} = -\alpha v - \beta x$. Un verdadero oscilador amortiguado que se comportaría de tres formas distintas según sus parámetros.
     
-    Annia le explicó: ``Miguel, tienes que dominar el análisis de estabilidad, el plano de fase, los valores propios, el discriminante... todo el arsenal.''\
+    Ania le explicó: ``Miguel, tienes que dominar el análisis de estabilidad, el plano de fase, los valores propios, el discriminante... todo el arsenal.''\
     
     Miguel tragó saliva. Pero asintió. Nunca le había faltado ambición.
 \end{description}
 
-\subsection*{La carrera contra el reloj}
-
-\textbf{11:05 am:} Alfonso ya estaba integrando. Primer integral: $\int (0.12t^2 + 0.6t) \, dt = 0.04t^3 + 0.3t^2$. Eso lo sabía de memoria.
-
-\textbf{11:12 am:} Eric pedía ayuda para comprender qué significa un equilibrio inestable en $v=0$ cuando aparecen dos nuevos equilibrios en $v = \pm\sqrt{r}$. Fernando le mostraba el diagrama de bifurcación en la pizarra. 
-
-``Es como cuando el sistema cambia de opinión,'' le explicaba Fernando. ``Antes solo había una opción (reposo). Luego hay dos opciones (velocidad positiva o negativa). El cambio ocurre en $r = 0$.''\
-
-Eric asentía lentamente. Sí, eso tenía sentido.
-
-\textbf{11:20 am:} Miguel calculaba la matriz Jacobiana. Los valores propios salían complejos conjugados en el caso sub-amortiguado. Escribía:
-
-\[
-\lambda_{1,2} = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}
-\]
-
-Eso significaba oscilaciones. Las trayectorias serían espirales. Lo visualizaba en su mente.
-
-\textbf{11:35 am:} Alfonso había completado la Parte A. 200 metros en 10 segundos. La velocidad final de 70 m/s (252 km/h). Una aceleración de 18 m/s² al final.
-
-``¡Ese carro anda más duro que el wifi del laboratorio!'', bromeó mientras presentaba sus gráficas de isoclinas.
-
-Los profesores asintieron aprobatoriamente.
-
-\textbf{11:42 am:} Eric terminaba su análisis de bifurcación. Había comprendido que no necesitaba integrar: el análisis cualitativo del parámetro $r$ era suficiente. Una epifanía. (Amanda le guiñó un ojo: ``Ves, el análisis es más poderoso que la integración.'')
-
-\textbf{11:50 am:} Miguel presentaba sus tres casos de amortiguamiento en el plano de fase. Sobre-amortiguado: un nodo sin oscilaciones. Críticamente amortiguado: el punto óptimo. Sub-amortiguado: una bella espiral convergente.
-
-Jackson miraba los diagramas y sonreía: ``Esto es teoría de sistemas dinámicos en su máxima expresión.''\
-
-\textbf{11:57 am:} Los tres equipos habían terminado. Todo el análisis estaba completo:
-
-\begin{itemize}
-    \item ✓ Cinemática del auto
-    \item ✓ Análisis de bifurcación
-    \item ✓ Plano de fase del resorte-amortiguador
-    \item ✓ Visualizaciones en Unity
-\end{itemize}
-
-Tres minutos antes del cierre.
-
-\subsection*{El epílogo}
-
-Fernando escribió un mensaje en la pizarra:
-
-\begin{center}
-\textit{``Excelente trabajo, equipo. Las empanadas están ganadas. Pero lo más importante es que han aprendido que las ecuaciones diferenciales no son solo símbolos en un papel: describen el movimiento, la estabilidad, la transformación de sistemas reales. Hoy resolvieron la dinámica de un auto diesel. Mañana podrían resolver el comportamiento de un reactor nuclear o el crecimiento de una población. Que disfruten su premio.''}
-\end{center}
-
-Annia añadió con una sonrisa:
-
-\begin{center}
-\textit{``Y recuerden: integración, análisis cualitativo y linealización. Esas tres herramientas les abrirán puertas a cualquier sistema dinámico que encuentren.''}
-\end{center}
-
-Alfonso, Eric y Miguel salieron corriendo hacia la cafetería. Llegaron exactamente a las 11:59 am.
-
-Las empanadas estaban calientes.
-
----
-
 \section{Parte A: Cinemática y Métodos Numéricos}
 \label{sec:parte_a}
+
+\subsection*{La carrera contrarreloj: Alfonso}
+
+\textbf{11:05 am:} Alfonso ya estaba integrando. Primer integral: $\int (0.12t^2 + 0.6t) \, dt = 0.04t^3 + 0.3t^2$. Eso lo sabía de memoria.
 
 En esta sección se presenta el análisis de un modelo cinemático con aceleración variable, descrito por una ecuación diferencial ordinaria de primer orden. Se estudia tanto la solución analítica como la implementación de diferentes métodos numéricos para su resolución.
 
@@ -353,27 +167,13 @@ Con la condición inicial $x(0) = 0$, se obtiene $C' = 0$, resultando:
 x(t) = 0.01t^4 + 0.1t^3 \text{ (m)}
 \end{equation}
 
-\subsection{Análisis del Comportamiento}
 
-El análisis del movimiento revela características importantes:
-
-\begin{itemize}
-    \item \textbf{Aceleración variable:} Crece cuadráticamente con el tiempo, alcanzando $a = 18.0$ m/s² en $t = 10$ s.
-    
-    \item \textbf{Velocidad creciente:} Sigue una combinación cúbica-cuadrática, llegando a $v = 70.0$ m/s al final del intervalo estudiado. La velocidad promedio en los 10 segundos es $\bar{v} = 20.0$ m/s.
-    
-    \item \textbf{Desplazamiento:} La posición final es $x = 200$ m, siguiendo una trayectoria polinómica de grado 4.
-\end{itemize}
-
-\subsection{Visualizaciones Interactivas en Unity}
-
-Todas las simulaciones descritas han sido implementadas en Unity, proporcionando visualizaciones interactivas que permiten comparar en tiempo real la solución analítica con los métodos numéricos, ajustando el paso de integración y observando cómo afecta la precisión.
 
 \subsection{Valores Numéricos Clave}
 
 La siguiente tabla muestra los valores de aceleración, velocidad y posición en momentos específicos:
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{cccc}
@@ -388,6 +188,7 @@ La siguiente tabla muestra los valores de aceleración, velocidad y posición en
 \caption{Valores cinemáticos en instantes clave}
 \label{tab:valores_clave}
 \end{table}
+
 
 \subsection{Implementación de Métodos Numéricos}
 
@@ -419,7 +220,7 @@ Para resolver numéricamente la ecuación diferencial, se implementaron tres mé
 
 La implementación de estos métodos se realizó con diferentes pasos de integración para estudiar su convergencia y estabilidad. Se utilizó un paso base de $h = 0.1$ segundos para la comparación principal.
 
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{lcccc}
@@ -433,13 +234,13 @@ RK4 & 4 & 4 & Alta & Alta \\
 \end{tabular}
 \caption{Características de los métodos numéricos}
 \label{tab:metodos_caracteristicas}
-\end{table*}
+\end{table}
 
 \subsection{Comparación de Métodos Numéricos}
 
 La siguiente figura muestra una comparación entre los diferentes métodos numéricos implementados (Euler, RK2 y RK4) y la solución analítica:
 
-\begin{figure}[t]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\columnwidth]{pictures/MethodsComparation.png}
 \caption{Comparación entre métodos numéricos y la solución analítica}
@@ -448,12 +249,12 @@ La siguiente figura muestra una comparación entre los diferentes métodos numé
 
 Para cuantificar la precisión de cada método, se calculó el error absoluto respecto a la solución analítica en diferentes puntos del intervalo $[0, 10]$ segundos. La tabla \ref{tab:errores_metodos} muestra estos errores para $t = 5$ s y $t = 10$ s con un paso de integración $h = 0.1$ s.
 
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{cccc}
 \toprule
-\textbf{Tiempo (s)} & \textbf{Err. Euler} & \textbf{Err. RK2} & \textbf{Err. RK4} \\
+\textbf{Tiempo (s)} & \textbf{Euler} & \textbf{RK2} & \textbf{RK4} \\
 \midrule
 5 & 0.625 & 0.031 & $<0.001$ \\
 10 & 3.500 & 0.175 & 0.011 \\
@@ -461,18 +262,18 @@ Para cuantificar la precisión de cada método, se calculó el error absoluto re
 \end{tabular}
 \caption{Error absoluto de los métodos numéricos}
 \label{tab:errores_metodos}
-\end{table*}
+\end{table}
 
 Se observa que el error del método de Euler crece significativamente con el tiempo, mientras que el método RK4 mantiene una precisión muy alta incluso al final del intervalo. El método RK2 presenta un comportamiento intermedio.
 
 También se estudió la convergencia de los métodos al reducir el paso de integración. La tabla \ref{tab:convergencia} muestra cómo disminuye el error máximo al reducir el paso.
 
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{cccc}
 \toprule
-\textbf{Paso $h$} & \textbf{Err. máx. Euler} & \textbf{Err. máx. RK2} & \textbf{Err. máx. RK4} \\
+\textbf{Paso $h$} & \textbf{Euler} & \textbf{RK2} & \textbf{RK4} \\
 \midrule
 0.1 & 3.500 & 0.175 & 0.011 \\
 0.05 & 1.750 & 0.044 & $<0.001$ \\
@@ -481,13 +282,13 @@ También se estudió la convergencia de los métodos al reducir el paso de integ
 \end{tabular}
 \caption{Convergencia de los métodos numéricos}
 \label{tab:convergencia}
-\end{table*}
+\end{table}
 
 \subsection{Análisis de Condicionamiento}
 
 El número de condición del problema se visualiza para entender la sensibilidad de la solución a pequeñas perturbaciones:
 
-\begin{figure}[t]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\columnwidth]{pictures/CondNumber.png}
 \caption{Número de condición para el problema cinemático}
@@ -504,16 +305,16 @@ donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración.
 
 La tabla \ref{tab:cond_number} muestra los valores del número de condición en diferentes instantes de tiempo:
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{ccc}
 \toprule
-\textbf{Tiempo (s)} & \textbf{Núm. cond.} & \textbf{Interpret.} \\
+\textbf{Tiempo (s)} & \textbf{Núm. cond.} \\
 \midrule
-1 & 1.29 & Bien cond. \\
-5 & 1.67 & Bien cond. \\
-10 & 1.82 & Bien cond. \\
+1 & 1.29 \\
+5 & 1.67  \\
+10 & 1.82 \\
 \bottomrule
 \end{tabular}
 \caption{Número de condición del problema}
@@ -526,15 +327,43 @@ El análisis del número de condición muestra que el problema está bien condic
 
 El campo de isoclinas en el plano $(t, v)$ muestra cómo la solución sigue las pendientes del campo. Esta visualización permite comprender geométricamente cómo evoluciona la velocidad con el tiempo bajo la influencia de la aceleración variable.
 
-\begin{figure}[t]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\columnwidth]{pictures/IsoCamp.png}
 \caption{Campo de isoclinas para la ecuación diferencial de velocidad}
 \label{fig:isoclinas}
 \end{figure}
 
+\subsection{Análisis del Comportamiento}
+
+El análisis del movimiento revela características importantes:
+
+\begin{itemize}
+    \item \textbf{Aceleración variable:} Crece cuadráticamente con el tiempo, alcanzando $a = 18.0$ m/s² en $t = 10$ s.
+    
+    \item \textbf{Velocidad creciente:} Sigue una combinación cúbica-cuadrática, llegando a $v = 70.0$ m/s al final del intervalo estudiado. La velocidad promedio en los 10 segundos es $\bar{v} = 20.0$ m/s.
+    
+    \item \textbf{Desplazamiento:} La posición final es $x = 200$ m, siguiendo una trayectoria polinómica de grado 4.
+\end{itemize}
+
+\subsection*{11:35 am}
+
+Alfonso había completado la Parte A. 200 metros en 10 segundos. La velocidad final de 70 m/s (252 km/h). Una aceleración de 18 m/s² al final.
+
+``¡Ese carro anda más duro que el wifi del laboratorio!'', bromeó mientras presentaba sus gráficas de isoclinas.
+
+Los profesores asintieron aprobatoriamente.
+
 \section{Parte B: Bifurcación Tipo Horquilla}
 \label{sec:parte_b}
+
+\subsection*{La carrera contrarreloj: Eric}
+
+\textbf{11:12 am:} Eric pedía ayuda para comprender qué significa un equilibrio inestable en $v=0$ cuando aparecen dos nuevos equilibrios en $v = \pm\sqrt{r}$. Fernando le mostraba el diagrama de bifurcación en la pizarra. 
+
+``Es como cuando el sistema cambia de opinión,'' le explicaba Fernando. ``Antes solo había una opción (reposo). Luego hay dos opciones (velocidad positiva o negativa). El cambio ocurre en $r = 0$.''\
+
+Eric asentía lentamente. Sí, eso tenía sentido.
 
 En esta sección se analiza un sistema dinámico que presenta bifurcación tipo horquilla, modelado por la ecuación diferencial autónoma:
 
@@ -546,11 +375,15 @@ donde $r$ es un parámetro de bifurcación y $v$ es la variable de estado.
 
 \subsection{Planteamiento del Problema}
 
-La ecuación $\frac{dv}{dt} = rv - v^3$ describe sistemas que presentan transiciones cualitativas en su comportamiento dinámico cuando varía el parámetro $r$. Este tipo de sistema aparece en aplicaciones como ecuaciones del calor, reacciones químicas y dinámica de poblaciones.
+La ecuación $\frac{dv}{dt} = rv - v^3$ describe sistemas que presentan transiciones cualitativas en su comportamiento dinámico cuando varía el parámetro $r$.
 
 \subsection{Determinación de Puntos de Equilibrio}
 
-Los puntos de equilibrio se encuentran cuando $\frac{dv}{dt} = 0$:
+Los puntos de equilibrio se encuentran cuando:
+
+\begin{equation}
+\frac{dv}{dt} = 0:
+\end{equation}
 
 \begin{equation}
 rv - v^3 = 0 \Rightarrow v(r - v^2) = 0
@@ -562,46 +395,40 @@ Esto produce:
     \item $v = \pm\sqrt{r}$ (existen solo cuando $r > 0$)
 \end{enumerate}
 
-\begin{table}[t]
-\centering
-\small
-\begin{tabular}{cc}
-\toprule
-\textbf{Valor de $r$} & \textbf{Puntos de Equilibrio} \\
-\midrule
-$r < 0$ & Solo $v = 0$ \\
-$r = 0$ & $v = 0$ (triple) \\
-$r > 0$ & $v = 0, v = \sqrt{r}, v = -\sqrt{r}$ \\
-\bottomrule
-\end{tabular}
-\caption{Puntos de equilibrio según el parámetro $r$}
-\label{tab:eq_bifurcacion}
-\end{table}
-
 \subsection{Análisis de Estabilidad}
-
-\subsubsection{Linealización Alrededor de Puntos de Equilibrio}
 
 La derivada de $f(v) = rv - v^3$ es:
 \begin{equation}
 f'(v) = r - 3v^2
 \end{equation}
 
-\paragraph{Análisis para $v = 0$:}
+Análisis para $v = 0$:
 \begin{equation}
 f'(0) = r
 \end{equation}
 
-- Si $r < 0$: $f'(0) < 0$ \quad (Estable)
-- Si $r = 0$: $f'(0) = 0$ \quad (No conclusivo, análisis no lineal necesario)
-- Si $r > 0$: $f'(0) > 0$ \quad (Inestable)
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ccc}
+\toprule
+\textbf{Región} & \textbf{$f'(0)$} & \textbf{Estabilidad} \\
+\midrule
+$r<0$ & $r<0$ & Estable \\
+$r=0$ & $0$ & No concluyente\\
+$r>0$ & $r>0$ & Inestable \\
+\bottomrule
+\end{tabular}
+\caption{Estabilidad de $v=0$ según el parámetro $r$}
+\label{tab:estab_v0}
+\end{table}
 
 \paragraph{Análisis para $v = \pm\sqrt{r}$ (cuando $r > 0$):}
 \begin{equation}
-f'(\pm\sqrt{r}) = r - 3r = -2r < 0 \quad (Siempre estables)
+f'(\pm\sqrt{r}) = r - 3r = -2r < 0 \quad \text{(Siempre estables)}
 \end{equation}
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{cccc}
@@ -622,7 +449,7 @@ $v = -\sqrt{r}$ & $r > 0$ & $-2r < 0$ & Estable \\
 
 El diagrama de bifurcación visualiza cómo evolucionan los puntos de equilibrio y su estabilidad en función de $r$. Este diagrama es fundamental para entender cómo el parámetro $r$ controla la transición entre regímenes cualitativamente diferentes:
 
-\begin{figure}[t]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\columnwidth]{pictures/BifurcationDiagram.png}
 \caption{Diagrama de bifurcación tipo horquilla para $\frac{dv}{dt} = rv - v^3$. Se muestra claramente la transición en $r=0$ donde aparecen dos ramas simétricas de equilibrios estables.}
@@ -643,9 +470,9 @@ El diagrama de bifurcación visualiza cómo evolucionan los puntos de equilibrio
 
 Para visualizar el comportamiento del sistema, se presentan análisis de estabilidad para diferentes valores de $r$:
 
-\subsubsection{Caso 1: $r = -1$ (Pre-bifurcación)}
+\subsubsection{Caso 1: r = -1 (Pre-bifurcación)}
 
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{cc}
@@ -659,11 +486,11 @@ Comportamiento & Todas las trayectorias $\to 0$ \\
 \end{tabular}
 \caption{Análisis para $r = -1$}
 \label{tab:bifur_r_neg}
-\end{table*}
+\end{table}
 
-\subsubsection{Caso 2: $r = 0.5$ (Post-bifurcación)}
+\subsubsection{Caso 2: r = 0.5 (Post-bifurcación)}
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{cc}
@@ -680,7 +507,7 @@ Valor numérico & $v \approx \pm 0.707$ \\
 \label{tab:bifur_r_pos}
 \end{table}
 
-\subsection{Análisis No Lineal en $r = 0$}
+\subsection{Análisis No Lineal en r = 0}
 
 En el punto crítico $r = 0$, la linealización no proporciona información. Se realiza un análisis no lineal:
 
@@ -712,7 +539,7 @@ La bifurcación tipo horquilla modela fenómenos tales como:
     \item \textbf{Ruptura de simetría:} El sistema rompe su simetría respecto a $v = 0$ cuando $r > 0$.
 \end{itemize}
 
-\subsection{Comparación: Campo de Direcciones para Diferentes $r$}
+\subsection{Comparación: Campo de Direcciones para Diferentes r}
 
 El campo de direcciones muestra cómo cambian las trayectorias del sistema $\frac{dv}{dt} = rv - v^3$ para diferentes valores del parámetro de bifurcación $r$:
 
@@ -722,39 +549,33 @@ El campo de direcciones muestra cómo cambian las trayectorias del sistema $\fra
     \item \textbf{Para $r = 0.5$}: El campo muestra divergencia desde $v = 0$ hacia $v = \pm\sqrt{0.5}$, indicando la aparición de dos nuevos equilibrios estables.
 \end{itemize}
 
+\subsection*{11:42 am}
+
+Eric terminaba su análisis de bifurcación. Había comprendido que no necesitaba integrar: el análisis cualitativo del parámetro $r$ era suficiente. Una epifanía. (Amanda le guiñó un ojo: ``Ves, el análisis es más poderoso que la integración.'')
+
 \section{Parte C: Análisis de Estabilidad y Plano de Fase}
 \label{sec:parte_c}
+
+\subsection*{La carrera contrarreloj: Miguel}
+
+\textbf{11:20 am:} Miguel calculaba la matriz Jacobiana. Los valores propios salían complejos conjugados en el caso sub-amortiguado. Escribía:
+
+\[
+\lambda_{1,2} = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}
+\]
+
+Eso significaba oscilaciones. Las trayectorias serían espirales. Lo visualizaba en su mente.
 
 Consideramos el modelo matemático de un automóvil acoplado a un resorte con amortiguamiento, representado por el sistema de ecuaciones diferenciales:
 
 \begin{equation}
-\boxed{\begin{cases}
+\begin{cases}
 \frac{dx}{dt} = v \\
 \frac{dv}{dt} = -\alpha v - \beta x
-\end{cases}}
+\end{cases}
 \end{equation}
 
-donde:
-- $x$: posición del sistema
-- $v$: velocidad del sistema  
-- $\alpha, \beta > 0$: parámetros físicos del modelo
-
-\subsection{Parámetros del Sistema}
-
-\begin{table}[H]
-\centering
-\footnotesize
-\begin{tabular}{ccc}
-\toprule
-\textbf{Parámetro} & \textbf{Significado Físico} & \textbf{Efecto Dinámico} \\
-\midrule
-$\alpha > 0$ & Coeficiente de amortiguamiento & Disipación de energía \\
-$\beta > 0$ & Constante del resorte & Fuerza restauradora \\
-\bottomrule
-\end{tabular}
-\caption{Parámetros del sistema masa-resorte-amortiguador}
-\label{tab:parametros}
-\end{table}
+Donde $x$ es la posición del sistema, $v$ la velocidad y $\alpha,\beta>0$ son parámetros físicos: $\alpha$ es el coeficiente de amortiguamiento, responsable de la disipación de energía (reduce la amplitud y controla la tasa de decaimiento), y $\beta$ es la constante del resorte, que proporciona la fuerza restauradora y determina la rigidez y la frecuencia natural.
 
 \subsection{Análisis de Puntos de Equilibrio}
 
@@ -771,35 +592,31 @@ $$\frac{dx}{dt} = 0 \quad \text{y} \quad \frac{dv}{dt} = 0$$
 2. De $\frac{dv}{dt} = -\alpha v - \beta x = 0$ y sustituyendo $v = 0$:
    $$- \alpha(0) - \beta x = 0 \Rightarrow x = 0$$
 
-\textbf{Resultado:} $\boxed{(x^*, v^*) = (0, 0) \text{ es el único punto de equilibrio}}$
+\textbf{Resultado:} (x, v) = (0, 0) es el único punto de equilibrio
 
 \subsection{Análisis de Estabilidad Lineal}
 
-\subsubsection{Linearización del Sistema}
+Para el sistema vectorial
+\[
+\mathbf{F}(x,v)=\begin{pmatrix} v \\ -\alpha v - \beta x \end{pmatrix},
+\]
+las derivadas parciales son:
+\[
+\frac{\partial F_1}{\partial x}=0,\quad \frac{\partial F_1}{\partial v}=1,\qquad
+\frac{\partial F_2}{\partial x}=-\beta,\quad \frac{\partial F_2}{\partial v}=-\alpha
+\]
 
-Para el sistema vectorial $\mathbf{F}(x,v) = \begin{pmatrix} v \\ -\alpha v - \beta x \end{pmatrix}$, calculamos la \textbf{matriz Jacobiana}:
+la matriz Jacobiana es:
 
-\textbf{Derivadas parciales:}
+\[
+\mathbf{J}(x,v)=
+\begin{pmatrix}
+0 & 1 \\
+-\beta & -\alpha
+\end{pmatrix}.
+\]
 
-\begin{table}[H]
-\centering
-\footnotesize
-\begin{tabular}{ccc}
-\toprule
- & $\frac{\partial}{\partial x}$ & $\frac{\partial}{\partial v}$ \\
-\midrule
-$F_1 = v$ & $0$ & $1$ \\
-$F_2 = -\alpha v - \beta x$ & $-\beta$ & $-\alpha$ \\
-\bottomrule
-\end{tabular}
-\caption{Derivadas parciales para la matriz Jacobiana}
-\label{tab:jacobiana}
-\end{table}
-
-\textbf{Matriz Jacobiana en el equilibrio:}
-$$\boxed{\mathbf{J}(0,0) = \begin{pmatrix} 0 & 1 \\ -\beta & -\alpha \end{pmatrix}}$$
-
-\subsubsection{Cálculo de Valores Propios}
+\subsection{Cálculo de Valores Propios}
 
 \textbf{Ecuación característica:} $\det(\mathbf{J} - \lambda \mathbf{I}) = 0$
 
@@ -809,90 +626,56 @@ $$\boxed{\mathbf{J}(0,0) = \begin{pmatrix} 0 & 1 \\ -\beta & -\alpha \end{pmatri
 \end{align}
 
 \textbf{Aplicando la fórmula cuadrática:}
-$$\boxed{\lambda_{1,2} = \frac{-\alpha \pm \sqrt{\alpha^2 - 4\beta}}{2}}$$
+$$\lambda_{1,2} = \frac{-\alpha \pm \sqrt{\alpha^2 - 4\beta}}{2}$$
 
 \textbf{Discriminante clave:} $\Delta = \alpha^2 - 4\beta$
 
-\subsubsection{Interpretación de los Valores Propios}
+\subsection{Interpretación de los Valores Propios}
 
-A continuación, la tabla \ref{tab:interpretacion} resume los elementos clave de los valores propios:
+La interpretación de los valores propios se basa en tres factores fundamentales:
 
-\begin{table*}[t]
-\centering
-\small
-\begin{tabular}{lccc}
-\toprule
-\textbf{Factor} & \textbf{Controla} & \textbf{Interpretación Física} & \textbf{Rango de valores} \\
-\midrule
-$\Delta = \alpha^2 - 4\beta$ & Naturaleza de convergencia & Tipo de amortiguamiento del sistema & $\Delta \in \mathbb{R}$ \\
-$\text{Re}(\lambda) = -\alpha/2$ & Tasa de decaimiento & Velocidad de estabilización & $\text{Re}(\lambda) < 0$ \\
-$\text{Im}(\lambda)$ & Frecuencia de oscilación & Frecuencia natural (caso sub-amortiguado) & Presente si $\Delta < 0$ \\
-\bottomrule
-\end{tabular}
-\caption{Interpretación de los valores propios del sistema masa-resorte-amortiguador}
-\label{tab:interpretacion}
-\end{table*}
+\begin{itemize}
+  \item \textbf{Discriminante:} $\Delta = \alpha^2 - 4\beta$ controla la naturaleza de la convergencia y determina el tipo de amortiguamiento del sistema, pudiendo tomar cualquier valor real.
+  
+  \item \textbf{Parte real:} $\text{Re}(\lambda) = -\alpha/2$ controla la tasa de decaimiento y representa la velocidad de estabilización del sistema. Dado que $\alpha > 0$, esta parte real es siempre negativa, garantizando la estabilidad.
+  
+  \item \textbf{Parte imaginaria:} $\text{Im}(\lambda)$ controla la frecuencia de oscilación y representa la frecuencia natural del sistema. Solo está presente cuando $\Delta < 0$, es decir, en el caso sub-amortiguado.
+\end{itemize}
 
 \subsection{Clasificación de la Estabilidad}
 
-\subsubsection{Fundamento Teórico}
-
 La \textbf{estabilidad asintótica} se determina por el signo de las partes reales de los valores propios.
 
-\textbf{Base matemática:} La solución general es $\mathbf{x}(t) = \sum_{i} c_i e^{\lambda_i t} \mathbf{v}_i$
+El comportamiento dinámico depende del \textbf{discriminante} ${\Delta = \alpha^2 - 4\beta}$. A continuación se presentan los tres casos posibles:
 
-Para que $\lim_{t \to \infty} \|\mathbf{x}(t)\| = 0$, necesitamos $\text{Re}(\lambda_i) < 0 \, \forall i$.
+\subsubsection{Caso 1: $\Delta > 0$ (Sistema sobre-amortiguado)}
 
-\subsubsection{Análisis por Discriminante}
-
-El comportamiento dinámico depende del \textbf{discriminante} $\boxed{\Delta = \alpha^2 - 4\beta}$. A continuación se presentan los tres casos posibles:
-
-\paragraph{Caso 1: $\Delta > 0$ (Sistema sobre-amortiguado)} El amortiguamiento domina sobre la elasticidad del resorte ($\alpha^2 > 4\beta$). Los valores propios son dos reales distintos:
+El amortiguamiento domina sobre la elasticidad del resorte ($\alpha^2 > 4\beta$). Los valores propios son dos reales distintos:
 $$\lambda_1 = \frac{-\alpha + \sqrt{\alpha^2 - 4\beta}}{2}, \quad \lambda_2 = \frac{-\alpha - \sqrt{\alpha^2 - 4\beta}}{2}$$
 
 Dado que $\beta > 0$: $\sqrt{\alpha^2 - 4\beta} < \alpha$, por tanto $\lambda_1 < 0$ y $\lambda_2 < 0$. El sistema presenta un \textbf{nodo estable}: sin oscilaciones, con regreso eficiente al equilibrio.
 
-\paragraph{Caso 2: $\Delta = 0$ (Sistema críticamente amortiguado)} Representa el amortiguamiento óptimo ($\alpha^2 = 4\beta$), con valor propio real repetido:
+\subsubsection{Caso 2: $\Delta = 0$ (Sistema críticamente amortiguado)}
+
+Representa el amortiguamiento óptimo ($\alpha^2 = 4\beta$), con valor propio real repetido:
 $$\lambda = -\frac{\alpha}{2} < 0$$
 
 El sistema presenta un \textbf{nodo crítico}: regreso más rápido sin oscilaciones, siendo el amortiguamiento óptimo para muchas aplicaciones prácticas.
 
-\paragraph{Caso 3: $\Delta < 0$ (Sistema sub-amortiguado)} La elasticidad del resorte domina sobre el amortiguamiento ($\alpha^2 < 4\beta$). Los valores propios son un par complejo conjugado:
+\subsubsection{Caso 3: $\Delta < 0$ (Sistema sub-amortiguado)}
+
+La elasticidad del resorte domina sobre el amortiguamiento ($\alpha^2 < 4\beta$). Los valores propios son un par complejo conjugado:
 $$\lambda_{1,2} = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}$$
 
 Con parte real $\text{Re}(\lambda) = -\frac{\alpha}{2} < 0$ (decaimiento exponencial) e imaginaria $\text{Im}(\lambda) = \pm\frac{\sqrt{4\beta - \alpha^2}}{2}$ (frecuencia de oscilación). El sistema presenta un \textbf{foco estable}: oscilaciones amortiguadas alrededor del equilibrio.
 
-\subsection{Teorema de Estabilidad de Lyapunov}
+\subsection{Verificación de Estabilidad Asintótica}
 
-\subsubsection{Criterio Fundamental}
+En todos los casos analizados, el sistema presenta estabilidad asintótica. Para el \textbf{caso sobre-amortiguado} ($\Delta > 0$), ambos valores propios son reales negativos ($\lambda_1, \lambda_2 < 0$), garantizando estabilidad asintótica. En el \textbf{caso críticamente amortiguado} ($\Delta = 0$), el valor propio repetido $\lambda = -\frac{\alpha}{2}$ es negativo, lo que también asegura estabilidad asintótica. Finalmente, en el \textbf{caso sub-amortiguado} ($\Delta < 0$), aunque los valores propios son complejos conjugados, su parte real $\text{Re}(\lambda) = -\frac{\alpha}{2}$ es negativa, manteniendo la estabilidad asintótica del sistema.
 
-> \textbf{Teorema:} Un punto de equilibrio es asintóticamente estable si y solo si todos los valores propios tienen parte real negativa: $\text{Re}(\lambda_i) < 0 \, \forall i$.
-
-\subsubsection{Verificación del Sistema}
-
-\begin{table*}[t]
-\centering
-\small
-\begin{tabular}{cccc}
-\toprule
-\textbf{Caso} & \textbf{Condición} & \textbf{Valores Propios} & \textbf{Estabilidad} \\
-\midrule
-1 & $\Delta > 0$ & $\lambda_1, \lambda_2 < 0$ & \checkmark Estable \\
-2 & $\Delta = 0$ & $\lambda = -\frac{\alpha}{2} < 0$ & \checkmark Estable \\
-3 & $\Delta < 0$ & $\text{Re}(\lambda) = -\frac{\alpha}{2} < 0$ & \checkmark Estable \\
-\bottomrule
-\end{tabular}
-\caption{Verificación de estabilidad según Lyapunov}
-\label{tab:lyapunov}
-\end{table*}
-
-\subsubsection{Conclusión}
-
-$$\boxed{\text{El sistema es globalmente asintóticamente estable para } \alpha, \beta > 0}$$
+Dado que $\alpha > 0$, en los tres casos se cumple que $\text{Re}(\lambda_i) < 0$. Por el criterio de Lyapunov, el origen $(0,0)$ es \textbf{globalmente asintóticamente estable} para todo $\alpha, \beta > 0$.
 
 \subsection{Plano de Fase}
-
-\subsubsection{Espacio de Estados}
 
 El \textbf{plano de fase} $(x, v)$ representa todos los estados posibles del sistema:
 
@@ -911,13 +694,15 @@ $v$ & Velocidad & Vertical \\
 \label{tab:espacio_estados}
 \end{table}
 
-\subsubsection{Campo Vectorial}
-
 En cada punto $(x,v)$, el \textbf{vector de flujo} es:
-$$\boxed{\mathbf{F}(x,v) = \begin{pmatrix} v \\ -\alpha v - \beta x \end{pmatrix}}$$
+\begin{equation}
+\mathbf{F}(x,v) = \begin{pmatrix} v \\ -\alpha v - \beta x \end{pmatrix}
+\end{equation}
 
 \textbf{Pendiente de trayectorias:}
-$$\frac{dv}{dx} = \frac{-\alpha v - \beta x}{v} \quad (v \neq 0)$$
+\begin{equation}
+\frac{dv}{dx} = \frac{-\alpha v - \beta x}{v} \quad (v \neq 0)
+\end{equation}
 
 \subsubsection{Isoclinas Críticas}
 
@@ -936,21 +721,17 @@ Vertical & $\frac{dx}{dt} = 0$ & $v = 0$ \\
 \label{tab:isoclinas}
 \end{table}
 
-\textbf{Significado Físico de las Isoclinas Críticas:}
+\textbf{Significado físico de las isoclinas críticas:}
 
-\textbf{\textcolor{red}{Isoclina Horizontal} ($v = -\frac{\beta}{\alpha}x$):}
-- \textbf{¿Qué significa?} La velocidad NO cambia en esta línea ($dv/dt = 0$)
-- \textbf{Interpretación física:} Las fuerzas están equilibradas instantáneamente
-- \textbf{Comportamiento:} Las trayectorias cruzan esta línea horizontalmente
+\begin{itemize}
+  \item \textbf{Isoclina horizontal} ($v = -\frac{\beta}{\alpha}x$): La velocidad no cambia en esta línea ($dv/dt = 0$). Físicamente, las fuerzas están equilibradas instantáneamente. Las trayectorias cruzan esta línea horizontalmente.
+  
+  \item \textbf{Isoclina vertical} ($v = 0$): La posición no cambia en esta línea ($dx/dt = 0$). Físicamente, el sistema está momentáneamente en reposo. Las trayectorias cruzan esta línea verticalmente.
+  
+  \item \textbf{Intersección:} Donde se cruzan ambas isoclinas está el punto de equilibrio $(0,0)$, donde el sistema permanece estático indefinidamente.
+\end{itemize}
 
-\textbf{\textcolor{blue}{Isoclina Vertical} ($v = 0$):}
-- \textbf{¿Qué significa?} La posición NO cambia en esta línea ($dx/dt = 0$)  
-- \textbf{Interpretación física:} El sistema está momentáneamente en reposo
-- \textbf{Comportamiento:} Las trayectorias cruzan esta línea verticalmente
-
-\textbf{Intersección:} Donde se cruzan ambas isoclinas está el punto de equilibrio $(0,0)$, donde el sistema permanece estático para siempre.
-
-\subsection{Visualización del Plano de Fase para los Tres Casos de Amortiguamiento}
+\subsection{Visualización del Plano de Fase}
 
 El plano de fase permite visualizar cómo el sistema masa-resorte-amortiguador se comporta bajo diferentes condiciones. Las trayectorias convergen hacia el punto de equilibrio $(0,0)$ desde cualquier condición inicial, demostrando la estabilidad global del sistema.
 
@@ -958,105 +739,109 @@ El plano de fase permite visualizar cómo el sistema masa-resorte-amortiguador s
 
 En este caso, el amortiguamiento es muy fuerte, dominando sobre la elasticidad del resorte. El sistema regresa al equilibrio sin oscilar, siguiendo trayectorias que se asemejan a las de un nodo estable.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
-\includegraphics[width=1.0\linewidth]{pictures/DampedOscillator_Overdamped.png}
-\caption{Plano de fase para el caso sobre-amortiguado. Las trayectorias convergen directamente al equilibrio sin oscilaciones, mostrando un comportamiento de nodo estable donde el amortiguamiento domina.}
+\includegraphics[width=0.9\columnwidth]{pictures/DampedOscillator_Overdamped.png}
+\caption{Plano de fase para el caso sobre-amortiguado. Las trayectorias convergen directamente al equilibrio sin oscilaciones.}
 \label{fig:fase_sobre_amortiguado}
 \end{figure}
 
 \textbf{Características observadas:}
 \begin{itemize}
-    \item Las trayectorias no oscilan alrededor del equilibrio
-    \item Convergencia directa sin sobreimpulso
-    \item Comportamiento característico de un nodo estable
-    \item Típicamente ocurre cuando $\alpha^2 > 4\beta$
+  \item Las trayectorias no oscilan alrededor del equilibrio
+  \item Convergencia directa sin sobreimpulso
+  \item Comportamiento característico de un nodo estable
+  \item Ocurre cuando $\alpha^2 > 4\beta$
 \end{itemize}
 
 \subsubsection{Caso 2: Sistema Críticamente Amortiguado ($\Delta = 0$)}
 
 Este es el caso límite entre el comportamiento sobre-amortiguado y sub-amortiguado. Representa el amortiguamiento óptimo que permite el retorno más rápido al equilibrio sin oscilaciones.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
-\includegraphics[width=1.0\linewidth]{pictures/DampedOscillator_Critically.png}
-\caption{Plano de fase para el caso críticamente amortiguado. Las trayectorias convergen de manera óptima sin oscilaciones, con velocidad de decaimiento máxima posible sin sobreimpulso.}
+\includegraphics[width=0.9\columnwidth]{pictures/DampedOscillator_Critically.png}
+\caption{Plano de fase para el caso críticamente amortiguado. Convergencia óptima sin oscilaciones.}
 \label{fig:fase_critico}
 \end{figure}
 
 \textbf{Características observadas:}
 \begin{itemize}
-    \item Convergencia más rápida que el caso sobre-amortiguado
-    \item Sin oscilaciones alrededor del equilibrio
-    \item Punto crítico con valor propio repetido $\lambda = -\alpha/2$
-    \item Comportamiento de nodo crítico
-    \item Condición óptima: $\alpha^2 = 4\beta$
+  \item Convergencia más rápida que el caso sobre-amortiguado
+  \item Sin oscilaciones alrededor del equilibrio
+  \item Valor propio repetido $\lambda = -\alpha/2$
+  \item Comportamiento de nodo crítico
+  \item Condición: $\alpha^2 = 4\beta$
 \end{itemize}
 
 \subsubsection{Caso 3: Sistema Sub-amortiguado ($\Delta < 0$)}
 
-En este caso, la elasticidad del resorte domina sobre el amortiguamiento. El sistema oscila alrededor del equilibrio con amplitud decreciente, presentando el comportamiento característico de un foco estable o espiral convergente.
+En este caso, la elasticidad del resorte domina sobre el amortiguamiento. El sistema oscila alrededor del equilibrio con amplitud decreciente, presentando el comportamiento característico de un foco estable.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
-\includegraphics[width=1.0\linewidth]{pictures/DampedOscillator_Underdamped.png}
-\caption{Plano de fase para el caso sub-amortiguado. Las trayectorias espiralan convergentemente hacia el equilibrio, mostrando oscilaciones amortiguadas características de un foco estable.}
+\includegraphics[width=0.9\columnwidth]{pictures/DampedOscillator_Underdamped.png}
+\caption{Plano de fase para el caso sub-amortiguado. Las trayectorias espiralan hacia el equilibrio.}
 \label{fig:fase_sub_amortiguado}
 \end{figure}
 
 \textbf{Características observadas:}
 \begin{itemize}
-    \item Oscilaciones amortiguadas alrededor del equilibrio
-    \item Trayectorias en forma de espiral convergente (foco estable)
-    \item Valores propios complejos conjugados: $\lambda = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}$
-    \item Frecuencia de oscilación controlada por $\text{Im}(\lambda)$
-    \item Tasa de decaimiento exponencial: $e^{-\alpha t/2}$
-    \item Ocurre cuando $\alpha^2 < 4\beta$
+  \item Oscilaciones amortiguadas alrededor del equilibrio
+  \item Trayectorias en forma de espiral convergente
+  \item Valores propios complejos: $\lambda = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}$
+  \item Tasa de decaimiento exponencial: $e^{-\alpha t/2}$
+  \item Ocurre cuando $\alpha^2 < 4\beta$
 \end{itemize}
 
 \subsection{Comparación de los Tres Casos}
 
-La siguiente tabla resume las características principales de cada régimen de amortiguamiento:
-
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Propiedad} & \textbf{Sobre-amortiguado} & \textbf{Críticamente amortiguado} & \textbf{Sub-amortiguado} \\
+\textbf{Propiedad} & \textbf{Sobre-amort.} & \textbf{Crítico} & \textbf{Sub-amort.} \\
 \midrule
 Condición & $\Delta > 0$ & $\Delta = 0$ & $\Delta < 0$ \\
-Valores propios & Dos reales & Real repetido & Complejos conjugados \\
-Tipo geométrico & Nodo estable & Nodo crítico & Foco estable \\
-Oscilaciones & No & No & Sí (amortiguadas) \\
-Velocidad de retorno & Lenta & Óptima & Media \\
-Ecuación discriminante & $\alpha^2 > 4\beta$ & $\alpha^2 = 4\beta$ & $\alpha^2 < 4\beta$ \\
+Valores propios & Reales & Repetido & Complejos \\
+Tipo geométrico & Nodo & Nodo crítico & Foco \\
+Oscilaciones & No & No & Sí \\
+Vel. retorno & Lenta & Óptima & Media \\
 \bottomrule
 \end{tabular}
 \caption{Comparación de los tres regímenes de amortiguamiento}
 \label{tab:comparacion_amortiguamiento}
-\end{table*}
-
-\subsection{Implicaciones Prácticas}
-
-En aplicaciones de ingeniería (suspensiones de vehículos, sistemas de aislamiento sísmico, etc.):
-
-\begin{itemize}
-    \item \textbf{Sobre-amortiguado:} Convergencia lenta pero segura. Se usa cuando es prioritaria la estabilidad.
-    
-    \item \textbf{Críticamente amortiguado:} Balance óptimo entre velocidad de respuesta y estabilidad. Ideal para muchas aplicaciones prácticas.
-    
-    \item \textbf{Sub-amortiguado:} Respuesta más rápida pero con oscilaciones. Aceptable si el sobrepico es tolerable.
-\end{itemize}
+\end{table}
 
 \subsection{Conclusión del Análisis de Estabilidad}
 
-El análisis completo del sistema masa-resorte-amortiguador demuestra que para $\alpha, \beta > 0$, el sistema es \textbf{globalmente asintóticamente estable}.
+El análisis completo del sistema masa-resorte-amortiguador demuestra que para $\alpha, \beta > 0$, el sistema es \textbf{globalmente asintóticamente estable}. Independientemente de las condiciones iniciales, el sistema siempre converge al punto de equilibrio $(0, 0)$, y la energía se disipa completamente. La visualización en el plano de fase confirma que todos los casos de amortiguamiento resultan en trayectorias convergentes al equilibrio.
 
-Esto significa que, independientemente de las condiciones iniciales, el sistema siempre convergerá al punto de equilibrio $(0, 0)$, y la energía se disipará completamente en el tiempo. La visualización en el plano de fase confirma que todos los casos de amortiguamiento resultan en trayectorias convergentes al equilibrio.
+\subsection*{11:50 am}
+
+Miguel presentaba sus tres casos de amortiguamiento en el plano de fase. Sobre-amortiguado: un nodo sin oscilaciones. Críticamente amortiguado: el punto óptimo. Sub-amortiguado: una bella espiral convergente.
+
+Jackson miraba los diagramas y sonreía: ``Esto es teoría de sistemas dinámicos en su máxima expresión.''\
+
+\textbf{11:57 am:} Los tres equipos habían terminado. Todo el análisis estaba completo. Tres minutos antes del cierre.
+
+\section*{El epílogo}
+
+Fernando escribió un mensaje en la pizarra:
+
+\begin{center}
+\textit{``Excelente trabajo, equipo. Las empanadas están ganadas. Pero lo más importante es que han aprendido que las ecuaciones diferenciales no son solo símbolos en un papel: describen el movimiento, la estabilidad, la transformación de sistemas reales. Hoy resolvieron la dinámica de un auto diesel. Mañana podrían resolver el comportamiento de un reactor nuclear o el crecimiento de una población. Que disfruten su premio.''}
+\end{center}
+
+Ania añadió con una sonrisa:
+
+\begin{center}
+\textit{``Y recuerden: integración, análisis cualitativo y linealización. Esas tres herramientas les abrirán puertas a cualquier sistema dinámico que encuentren.''}
+\end{center}
+
+Alfonso, Eric y Miguel salieron corriendo hacia la cafetería. Llegaron exactamente a las 11:59 am. Las empanadas estaban calientes.
 
 \label{end}
 
 \end{document}
-
-%===================================================================================
