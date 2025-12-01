@@ -196,6 +196,112 @@ Todas las simulaciones descritas han sido implementadas en Unity, proporcionando
     \item [Parte C] Visualizar el plano de fase con diferentes condiciones iniciales y parámetros, mostrando cómo las trayectorias convergen al equilibrio en cada régimen de amortiguamiento.
 \end{itemize}
 
+%===================================================================================
+\section{La Misión: Un Viaje a Contrarreloj}
+%===================================================================================
+
+\subsection*{Una tarde de presión en MATCOM}
+
+Era una tarde nublada típica de MATCOM cuando \textbf{Alfonso Teja}, \textbf{Eric Reyes} y \textbf{Miguel Cazorla} recibieron un mensaje inesperado que cambiaría su destino académico (y, más importante aún, su acceso a las empanadas de la cafetería). 
+
+Los profesores \textbf{Fernando} y \textbf{Amanda} de Matemática Numérica, junto con \textbf{Annia} y \textbf{Jackson} de Ecuaciones Diferenciales, se reunieron con ellos en el aula de laboratorio a las 11:00 am con una misión urgente:
+
+\begin{center}
+\textit{``Equipo: su misión de hoy es resolver la dinámica completa de un automóvil diesel, desde su aceleración hasta su comportamiento oscilatorio. Ah, y háganlo antes de que cierre la cafetería a las 12:00 pm. Si lo logran, las empanadas corren por cuenta de los profesores.''}
+\end{center}
+
+Los tres se miraron. \textbf{Una hora de margen}. La presión era real: \textbf{si no terminaban, se quedaban sin empanadas}.
+
+\subsection*{El reparto de tareas}
+
+La estrategia fue dividir y conquistar. Los profesores asignaron:
+
+\begin{description}
+    \item[\textbf{Alfonso Teja --- Parte A: Cinemática Directa}] ``El arranque del auto''
+    
+    La misión de Alfonso era la más directa: resolver la dinámica de un auto diesel acelerado por una función $\frac{dv}{dt} = 0.12t^2 + 0.6t$. Tenía que integrar, calcular, visualizar. Un trabajo analítico donde la matemática fluía como el diesel en los cilindros del motor.
+    
+    Alfonso asintió con confianza. Siempre le habían gustado los números.
+    
+    \item[\textbf{Eric Reyes --- Parte B: Bifurcación Pitchfork}] ``Cuando el motor decide''
+    
+    Eric recibió la ecuación $\frac{dv}{dt} = rv - v^3$, un sistema donde pequeños cambios en $r$ provocaban transformaciones radicales. Los profesores le advirtieron solemnemente:
+    
+    \begin{center}
+    \textit{``Este sistema modela cuándo el motor se apaga, arranca o gira establemente. Y Eric... \textbf{no confíes en tu intuición para integrar cosas}.''} 
+    \end{center}
+    
+    Eric sonrió nerviosamente. Era su punto débil más evidente. (Miguel murmuró: ``Al menos es honesto sobre sus limitaciones.'')
+    
+    \item[\textbf{Miguel Cazorla --- Parte C: Resorte Amortiguado}] ``El comportamiento oscilatorio''
+    
+    A Miguel le tocó el sistema más complejo: $\dot{x} = v$, $\dot{v} = -\alpha v - \beta x$. Un verdadero oscilador amortiguado que se comportaría de tres formas distintas según sus parámetros.
+    
+    Annia le explicó: ``Miguel, tienes que dominar el análisis de estabilidad, el plano de fase, los valores propios, el discriminante... todo el arsenal.''\
+    
+    Miguel tragó saliva. Pero asintió. Nunca le había faltado ambición.
+\end{description}
+
+\subsection*{La carrera contra el reloj}
+
+\textbf{11:05 am:} Alfonso ya estaba integrando. Primer integral: $\int (0.12t^2 + 0.6t) \, dt = 0.04t^3 + 0.3t^2$. Eso lo sabía de memoria.
+
+\textbf{11:12 am:} Eric pedía ayuda para comprender qué significa un equilibrio inestable en $v=0$ cuando aparecen dos nuevos equilibrios en $v = \pm\sqrt{r}$. Fernando le mostraba el diagrama de bifurcación en la pizarra. 
+
+``Es como cuando el sistema cambia de opinión,'' le explicaba Fernando. ``Antes solo había una opción (reposo). Luego hay dos opciones (velocidad positiva o negativa). El cambio ocurre en $r = 0$.''\
+
+Eric asentía lentamente. Sí, eso tenía sentido.
+
+\textbf{11:20 am:} Miguel calculaba la matriz Jacobiana. Los valores propios salían complejos conjugados en el caso sub-amortiguado. Escribía:
+
+\[
+\lambda_{1,2} = -\frac{\alpha}{2} \pm i\frac{\sqrt{4\beta - \alpha^2}}{2}
+\]
+
+Eso significaba oscilaciones. Las trayectorias serían espirales. Lo visualizaba en su mente.
+
+\textbf{11:35 am:} Alfonso había completado la Parte A. 200 metros en 10 segundos. La velocidad final de 70 m/s (252 km/h). Una aceleración de 18 m/s² al final.
+
+``¡Ese carro anda más duro que el wifi del laboratorio!'', bromeó mientras presentaba sus gráficas de isoclinas.
+
+Los profesores asintieron aprobatoriamente.
+
+\textbf{11:42 am:} Eric terminaba su análisis de bifurcación. Había comprendido que no necesitaba integrar: el análisis cualitativo del parámetro $r$ era suficiente. Una epifanía. (Amanda le guiñó un ojo: ``Ves, el análisis es más poderoso que la integración.'')
+
+\textbf{11:50 am:} Miguel presentaba sus tres casos de amortiguamiento en el plano de fase. Sobre-amortiguado: un nodo sin oscilaciones. Críticamente amortiguado: el punto óptimo. Sub-amortiguado: una bella espiral convergente.
+
+Jackson miraba los diagramas y sonreía: ``Esto es teoría de sistemas dinámicos en su máxima expresión.''\
+
+\textbf{11:57 am:} Los tres equipos habían terminado. Todo el análisis estaba completo:
+
+\begin{itemize}
+    \item ✓ Cinemática del auto
+    \item ✓ Análisis de bifurcación
+    \item ✓ Plano de fase del resorte-amortiguador
+    \item ✓ Visualizaciones en Unity
+\end{itemize}
+
+Tres minutos antes del cierre.
+
+\subsection*{El epílogo}
+
+Fernando escribió un mensaje en la pizarra:
+
+\begin{center}
+\textit{``Excelente trabajo, equipo. Las empanadas están ganadas. Pero lo más importante es que han aprendido que las ecuaciones diferenciales no son solo símbolos en un papel: describen el movimiento, la estabilidad, la transformación de sistemas reales. Hoy resolvieron la dinámica de un auto diesel. Mañana podrían resolver el comportamiento de un reactor nuclear o el crecimiento de una población. Que disfruten su premio.''}
+\end{center}
+
+Annia añadió con una sonrisa:
+
+\begin{center}
+\textit{``Y recuerden: integración, análisis cualitativo y linealización. Esas tres herramientas les abrirán puertas a cualquier sistema dinámico que encuentren.''}
+\end{center}
+
+Alfonso, Eric y Miguel salieron corriendo hacia la cafetería. Llegaron exactamente a las 11:59 am.
+
+Las empanadas estaban calientes.
+
+---
 
 \section{Parte A: Cinemática y Métodos Numéricos}
 \label{sec:parte_a}
