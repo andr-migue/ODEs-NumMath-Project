@@ -9,7 +9,6 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{booktabs}
 \usepackage{float}
 
 \captionsetup[table]{name=Tabla}
@@ -178,19 +177,15 @@ x(t) = 0.01t^4 + 0.1t^3 \text{ (m)}
 La siguiente tabla muestra los valores de aceleración, velocidad y posición en momentos específicos:
 
 \begin{table}[H]
-\centering
-\small
-\begin{tabular}{cccc}
-\toprule
-\textbf{Tiempo (s)} & \textbf{Acel. (m/s²)} & \textbf{Vel. (m/s)} & \textbf{Pos. (m)} \\
-\midrule
-0 & 0.00 & 0.00 & 0.00 \\
-5 & 6.00 & 12.50 & 18.75 \\
-10 & 18.00 & 70.00 & 200.00 \\
-\bottomrule
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+\textbf{Tiempo (s)} & \textbf{Acel. (m/s²)} & \textbf{Vel. (m/s)} & \textbf{Pos. (m)} \\ \hline
+0 & 0.00 & 0.00 & 0.00 \\ \hline
+5 & 6.00 & 12.50 & 18.75 \\ \hline
+10 & 18.00 & 70.00 & 200.00 \\ \hline
 \end{tabular}
-\caption{Valores cinemáticos en instantes clave}
-\label{tab:valores_clave}
+\caption{Valores cinemáticos en instantes clave. \label{tab:valores_clave}}
+\end{center}
 \end{table}
 
 
@@ -224,21 +219,7 @@ Para resolver numéricamente la ecuación diferencial, se implementaron tres mé
 
 La implementación de estos métodos se realizó con diferentes pasos de integración para estudiar su convergencia y estabilidad. Se utilizó un paso base de $h = 0.1$ segundos para la comparación principal.
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Método} & \textbf{Orden} & \textbf{Eval./paso} & \textbf{Estab.} & \textbf{Prec.} \\
-\midrule
-Euler & 1 & 1 & Baja & Baja \\
-RK2 & 2 & 2 & Media & Media \\
-RK4 & 4 & 4 & Alta & Alta \\
-\bottomrule
-\end{tabular}
-\caption{Características de los métodos numéricos}
-\label{tab:metodos_caracteristicas}
-\end{table}
+Los tres métodos presentan características distintivas: el \textbf{método de Euler} es de orden 1, requiere una evaluación por paso y tiene baja estabilidad y precisión. El \textbf{método RK2} es de orden 2, requiere dos evaluaciones por paso y ofrece estabilidad y precisión media. El \textbf{método RK4} es de orden 4, requiere cuatro evaluaciones por paso y proporciona alta estabilidad y precisión.
 
 \subsection{Comparación de Métodos Numéricos}
 
@@ -254,18 +235,14 @@ La siguiente figura muestra una comparación entre los diferentes métodos numé
 Para cuantificar la precisión de cada método, se calculó el error absoluto respecto a la solución analítica en diferentes puntos del intervalo $[0, 10]$ segundos. La tabla \ref{tab:errores_metodos} muestra estos errores para $t = 5$ s y $t = 10$ s con un paso de integración $h = 0.1$ s.
 
 \begin{table}[H]
-\centering
-\small
-\begin{tabular}{cccc}
-\toprule
-\textbf{Tiempo (s)} & \textbf{Euler} & \textbf{RK2} & \textbf{RK4} \\
-\midrule
-5 & 0.625 & 0.031 & $<0.001$ \\
-10 & 3.500 & 0.175 & 0.011 \\
-\bottomrule
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+\textbf{Tiempo (s)} & \textbf{Euler} & \textbf{RK2} & \textbf{RK4} \\ \hline
+5 & 0.625 & 0.031 & $<0.001$ \\ \hline
+10 & 3.500 & 0.175 & 0.011 \\ \hline
 \end{tabular}
-\caption{Error absoluto de los métodos numéricos}
-\label{tab:errores_metodos}
+\caption{Error absoluto de los métodos numéricos. \label{tab:errores_metodos}}
+\end{center}
 \end{table}
 
 Se observa que el error del método de Euler crece significativamente con el tiempo, mientras que el método RK4 mantiene una precisión muy alta incluso al final del intervalo. El método RK2 presenta un comportamiento intermedio.
@@ -273,19 +250,15 @@ Se observa que el error del método de Euler crece significativamente con el tie
 También se estudió la convergencia de los métodos al reducir el paso de integración. La tabla \ref{tab:convergencia} muestra cómo disminuye el error máximo al reducir el paso.
 
 \begin{table}[H]
-\centering
-\small
-\begin{tabular}{cccc}
-\toprule
-\textbf{Paso $h$} & \textbf{Euler} & \textbf{RK2} & \textbf{RK4} \\
-\midrule
-0.1 & 3.500 & 0.175 & 0.011 \\
-0.05 & 1.750 & 0.044 & $<0.001$ \\
-0.01 & 0.350 & 0.002 & $<0.0001$ \\
-\bottomrule
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+\textbf{Paso $h$} & \textbf{Euler} & \textbf{RK2} & \textbf{RK4} \\ \hline
+0.1 & 3.500 & 0.175 & 0.011 \\ \hline
+0.05 & 1.750 & 0.044 & $<0.001$ \\ \hline
+0.01 & 0.350 & 0.002 & $<0.0001$ \\ \hline
 \end{tabular}
-\caption{Convergencia de los métodos numéricos}
-\label{tab:convergencia}
+\caption{Convergencia de los métodos numéricos. \label{tab:convergencia}}
+\end{center}
 \end{table}
 
 \subsection{Análisis de Condicionamiento}
@@ -305,24 +278,20 @@ El número de condición $\kappa(t)$ para este problema se define como:
 \kappa(t) = \left| \frac{t \cdot f'(t)}{f(t)} \right|
 \end{equation}
 
-donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración (ecuación \eqref{eq:aceleracion}).
+donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración \eqref{eq:aceleracion}.
 
 La tabla \ref{tab:cond_number} muestra los valores del número de condición en diferentes instantes de tiempo:
 
 \begin{table}[H]
-\centering
-\small
-\begin{tabular}{ccc}
-\toprule
-\textbf{Tiempo (s)} & \textbf{Núm. cond.} \\
-\midrule
-1 & 1.29 \\
-5 & 1.67  \\
-10 & 1.82 \\
-\bottomrule
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+\textbf{Tiempo (s)} & \textbf{Núm. cond.} \\ \hline
+1 & 1.29 \\ \hline
+5 & 1.67 \\ \hline
+10 & 1.82 \\ \hline
 \end{tabular}
-\caption{Número de condición del problema}
-\label{tab:cond_number}
+\caption{Número de condición del problema. \label{tab:cond_number}}
+\end{center}
 \end{table}
 
 El análisis del número de condición muestra que el problema está bien condicionado en todo el intervalo de estudio, lo que significa que pequeñas perturbaciones en los datos de entrada producen pequeñas variaciones en la solución. Esto explica por qué los métodos numéricos de orden superior (RK2 y RK4) logran una excelente aproximación a la solución analítica.
@@ -412,43 +381,14 @@ Análisis para $v = 0$:
 f'(0) = r
 \end{equation}
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{ccc}
-\toprule
-\textbf{Región} & \textbf{$f'(0)$} & \textbf{Estabilidad} \\
-\midrule
-$r<0$ & $r<0$ & Estable \\
-$r=0$ & $0$ & No concluyente\\
-$r>0$ & $r>0$ & Inestable \\
-\bottomrule
-\end{tabular}
-\caption{Estabilidad de $v=0$ según el parámetro $r$}
-\label{tab:estab_v0}
-\end{table}
+El análisis de estabilidad del punto $v = 0$ depende del signo del parámetro $r$: cuando $r < 0$, la derivada $f'(0) = r < 0$ indica que el punto es \textbf{estable}; cuando $r = 0$, la derivada es cero y el análisis lineal es \textbf{no concluyente}; cuando $r > 0$, la derivada $f'(0) = r > 0$ indica que el punto es \textbf{inestable}.
 
 \paragraph{Análisis para $v = \pm\sqrt{r}$ (cuando $r > 0$):}
 \begin{equation}
 f'(\pm\sqrt{r}) = r - 3r = -2r < 0 \quad \text{(Siempre estables)}
 \end{equation}
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{cccc}
-\toprule
-\textbf{Punto} & \textbf{Región} & \textbf{$f'(v)$} & \textbf{Estabilidad} \\
-\midrule
-$v = 0$ & $r < 0$ & $r < 0$ & Estable \\
-$v = 0$ & $r > 0$ & $r > 0$ & Inestable \\
-$v = \sqrt{r}$ & $r > 0$ & $-2r < 0$ & Estable \\
-$v = -\sqrt{r}$ & $r > 0$ & $-2r < 0$ & Estable \\
-\bottomrule
-\end{tabular}
-\caption{Estabilidad de puntos de equilibrio}
-\label{tab:estab_bifurcacion}
-\end{table}
+En resumen, la estabilidad de los puntos de equilibrio se comporta de la siguiente manera: el punto $v = 0$ es estable cuando $r < 0$ (con $f'(0) = r < 0$) e inestable cuando $r > 0$ (con $f'(0) = r > 0$). Los puntos $v = \pm\sqrt{r}$, que solo existen para $r > 0$, son siempre estables ya que $f'(\pm\sqrt{r}) = -2r < 0$.
 
 \subsection{Diagrama de Bifurcación}
 
@@ -477,40 +417,11 @@ Para visualizar el comportamiento del sistema, se presentan análisis de estabil
 
 \subsubsection{Caso 1: r = -1 (Pre-bifurcación)}
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{cc}
-\toprule
-\textbf{Propiedad} & \textbf{Valor} \\
-\midrule
-Número de equilibrios & 1 \\
-Tipo de equilibrio & Nodo estable \\
-Comportamiento & Todas las trayectorias $\to 0$ \\
-\bottomrule
-\end{tabular}
-\caption{Análisis para $r = -1$}
-\label{tab:bifur_r_neg}
-\end{table}
+Para $r = -1$, el sistema presenta un único punto de equilibrio en $v = 0$, el cual es un nodo estable. Todas las trayectorias convergen hacia el origen.
 
 \subsubsection{Caso 2: r = 0.5 (Post-bifurcación)}
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{cc}
-\toprule
-\textbf{Propiedad} & \textbf{Valor} \\
-\midrule
-Número de equilibrios & 3 \\
-Tipo de $v = 0$ & Nodo inestable \\
-Tipo de $v = \pm\sqrt{0.5}$ & Nodos estables \\
-Valor numérico & $v \approx \pm 0.707$ \\
-\bottomrule
-\end{tabular}
-\caption{Análisis para $r = 0.5$}
-\label{tab:bifur_r_pos}
-\end{table}
+Para $r = 0.5$, el sistema presenta tres puntos de equilibrio: $v = 0$ se convierte en un nodo inestable, mientras que aparecen dos nuevos equilibrios estables en $v = \pm\sqrt{0.5} \approx \pm 0.707$.
 
 \subsection{Análisis No Lineal en r = 0}
 
@@ -687,22 +598,7 @@ Dado que $\alpha > 0$, en los tres casos se cumple que $\text{Re}(\lambda_i) < 0
 
 \subsection{Plano de Fase}
 
-El \textbf{plano de fase} $(x, v)$ representa todos los estados posibles del sistema:
-
-\begin{table}[H]
-\centering
-\footnotesize
-\begin{tabular}{ccc}
-\toprule
-\textbf{Componente} & \textbf{Interpretación} & \textbf{Eje} \\
-\midrule
-$x$ & Posición & Horizontal \\
-$v$ & Velocidad & Vertical \\
-\bottomrule
-\end{tabular}
-\caption{Componentes del plano de fase}
-\label{tab:espacio_estados}
-\end{table}
+El \textbf{plano de fase} $(x, v)$ representa todos los estados posibles del sistema. En este espacio bidimensional, el eje horizontal corresponde a la posición $x$ y el eje vertical a la velocidad $v$.
 
 En cada punto $(x,v)$, el \textbf{vector de flujo} es:
 \begin{equation}
@@ -716,20 +612,7 @@ En cada punto $(x,v)$, el \textbf{vector de flujo} es:
 
 \subsubsection{Isoclinas Críticas}
 
-\begin{table}[H]
-\centering
-\footnotesize
-\begin{tabular}{ccc}
-\toprule
-\textbf{Tipo} & \textbf{Condición} & \textbf{Ecuación} \\
-\midrule
-Horizontal & $\frac{dv}{dt} = 0$ & $\alpha v + \beta x = 0$ \\
-Vertical & $\frac{dx}{dt} = 0$ & $v = 0$ \\
-\bottomrule
-\end{tabular}
-\caption{Isoclinas críticas del sistema}
-\label{tab:isoclinas}
-\end{table}
+El sistema presenta dos isoclinas críticas: la \textbf{isoclina horizontal}, donde $\frac{dv}{dt} = 0$, está definida por la ecuación $\alpha v + \beta x = 0$; la \textbf{isoclina vertical}, donde $\frac{dx}{dt} = 0$, está definida por $v = 0$.
 
 \textbf{Significado físico de las isoclinas críticas:}
 
@@ -806,23 +689,7 @@ En este caso, la elasticidad del resorte domina sobre el amortiguamiento. El sis
 
 \subsection{Comparación de los Tres Casos}
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{lccc}
-\toprule
-\textbf{Propiedad} & \textbf{Sobre-amort.} & \textbf{Crítico} & \textbf{Sub-amort.} \\
-\midrule
-Condición & $\Delta > 0$ & $\Delta = 0$ & $\Delta < 0$ \\
-Valores propios & Reales & Repetido & Complejos \\
-Tipo geométrico & Nodo & Nodo crítico & Foco \\
-Oscilaciones & No & No & Sí \\
-Vel. retorno & Lenta & Óptima & Media \\
-\bottomrule
-\end{tabular}
-\caption{Comparación de los tres regímenes de amortiguamiento}
-\label{tab:comparacion_amortiguamiento}
-\end{table}
+Los tres regímenes de amortiguamiento presentan características distintivas que permiten su clasificación. El \textbf{sistema sobre-amortiguado} ($\Delta > 0$) tiene valores propios reales distintos, comportándose como un nodo estable sin oscilaciones y con retorno lento al equilibrio. El \textbf{sistema críticamente amortiguado} ($\Delta = 0$) presenta un valor propio real repetido, formando un nodo crítico que representa el amortiguamiento óptimo: el retorno más rápido posible sin oscilaciones. Finalmente, el \textbf{sistema sub-amortiguado} ($\Delta < 0$) exhibe valores propios complejos conjugados, manifestándose como un foco estable con oscilaciones amortiguadas y velocidad de retorno intermedia.
 
 \subsection{Conclusión del Análisis de Estabilidad}
 
