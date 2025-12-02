@@ -26,7 +26,7 @@
 \title{Empanada Acelerada.}
 
 \author{\\
-\name Alfonso Tejeda Rodríguez \email \href{mailto:alfonsotejeda150605@gmail.com}{alfonsotejeda150605@gmail.com}
+\name Alfonso Teja Rodríguez \email \href{mailto:alfonsotejeda150605@gmail.com}{alfonsotejeda150605@gmail.com}
 	\\ \addr Grupo C212 \AND
 \name Miguel Cazorla Zamora \email \href{mailto:miguelzamora210405@gmail.com}{miguelzamora210405@gmail.com}
   \\ \addr Grupo C212 \AND
@@ -128,12 +128,14 @@ Se considera un móvil que parte del reposo desde el origen de coordenadas, cuya
 
 \begin{equation}
 a(t) = 0.12t^2 + 0.6t
+\label{eq:aceleracion}
 \end{equation}
 
 El problema consiste en resolver la ecuación diferencial para la velocidad:
 
 \begin{equation}
 \frac{dv}{dt} = 0.12t^2 + 0.6t
+\label{eq:edo_velocidad}
 \end{equation}
 
 Con las condiciones iniciales:
@@ -153,6 +155,7 @@ Aplicando la condición inicial $v(0) = 0$, se determina que $C = 0$, por lo que
 
 \begin{equation}
 v(t) = 0.04t^3 + 0.3t^2 \text{ (m/s)}
+\label{eq:velocidad}
 \end{equation}
 
 Para obtener la posición, se integra la velocidad:
@@ -165,6 +168,7 @@ Con la condición inicial $x(0) = 0$, se obtiene $C' = 0$, resultando:
 
 \begin{equation}
 x(t) = 0.01t^4 + 0.1t^3 \text{ (m)}
+\label{eq:posicion}
 \end{equation}
 
 
@@ -301,7 +305,7 @@ El número de condición $\kappa(t)$ para este problema se define como:
 \kappa(t) = \left| \frac{t \cdot f'(t)}{f(t)} \right|
 \end{equation}
 
-donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración.
+donde $f(t) = 0.12t^2 + 0.6t$ es la función de aceleración (ecuación \eqref{eq:aceleracion}).
 
 La tabla \ref{tab:cond_number} muestra los valores del número de condición en diferentes instantes de tiempo:
 
@@ -369,13 +373,14 @@ En esta sección se analiza un sistema dinámico que presenta bifurcación tipo 
 
 \begin{equation}
 \frac{dv}{dt} = rv - v^3
+\label{eq:bifurcacion}
 \end{equation}
 
 donde $r$ es un parámetro de bifurcación y $v$ es la variable de estado.
 
 \subsection{Planteamiento del Problema}
 
-La ecuación $\frac{dv}{dt} = rv - v^3$ describe sistemas que presentan transiciones cualitativas en su comportamiento dinámico cuando varía el parámetro $r$.
+La ecuación \eqref{eq:bifurcacion} describe sistemas que presentan transiciones cualitativas en su comportamiento dinámico cuando varía el parámetro $r$.
 
 \subsection{Determinación de Puntos de Equilibrio}
 
@@ -541,7 +546,7 @@ La bifurcación tipo horquilla modela fenómenos tales como:
 
 \subsection{Comparación: Campo de Direcciones para Diferentes r}
 
-El campo de direcciones muestra cómo cambian las trayectorias del sistema $\frac{dv}{dt} = rv - v^3$ para diferentes valores del parámetro de bifurcación $r$:
+El campo de direcciones muestra cómo cambian las trayectorias del sistema \eqref{eq:bifurcacion} para diferentes valores del parámetro de bifurcación $r$:
 
 \begin{itemize}
     \item \textbf{Para $r = -1$}: El campo de direcciones converge hacia $v = 0$, indicando la estabilidad de este punto.
@@ -573,6 +578,7 @@ Consideramos el modelo matemático de un automóvil acoplado a un resorte con am
 \frac{dx}{dt} = v \\
 \frac{dv}{dt} = -\alpha v - \beta x
 \end{cases}
+\label{eq:sistema_amortiguado}
 \end{equation}
 
 Donde $x$ es la posición del sistema, $v$ la velocidad y $\alpha,\beta>0$ son parámetros físicos: $\alpha$ es el coeficiente de amortiguamiento, responsable de la disipación de energía (reduce la amplitud y controla la tasa de decaimiento), y $\beta$ es la constante del resorte, que proporciona la fuerza restauradora y determina la rigidez y la frecuencia natural.
@@ -628,14 +634,18 @@ la matriz Jacobiana es:
 \textbf{Aplicando la fórmula cuadrática:}
 $$\lambda_{1,2} = \frac{-\alpha \pm \sqrt{\alpha^2 - 4\beta}}{2}$$
 
-\textbf{Discriminante clave:} $\Delta = \alpha^2 - 4\beta$
+\textbf{Discriminante clave:} 
+\begin{equation}
+\Delta = \alpha^2 - 4\beta
+\label{eq:discriminante}
+\end{equation}
 
 \subsection{Interpretación de los Valores Propios}
 
 La interpretación de los valores propios se basa en tres factores fundamentales:
 
 \begin{itemize}
-  \item \textbf{Discriminante:} $\Delta = \alpha^2 - 4\beta$ controla la naturaleza de la convergencia y determina el tipo de amortiguamiento del sistema, pudiendo tomar cualquier valor real.
+  \item \textbf{Discriminante:} \eqref{eq:discriminante} controla la naturaleza de la convergencia y determina el tipo de amortiguamiento del sistema, pudiendo tomar cualquier valor real.
   
   \item \textbf{Parte real:} $\text{Re}(\lambda) = -\alpha/2$ controla la tasa de decaimiento y representa la velocidad de estabilización del sistema. Dado que $\alpha > 0$, esta parte real es siempre negativa, garantizando la estabilidad.
   
@@ -646,7 +656,7 @@ La interpretación de los valores propios se basa en tres factores fundamentales
 
 La \textbf{estabilidad asintótica} se determina por el signo de las partes reales de los valores propios.
 
-El comportamiento dinámico depende del \textbf{discriminante} ${\Delta = \alpha^2 - 4\beta}$. A continuación se presentan los tres casos posibles:
+El comportamiento dinámico depende del \textbf{discriminante} $\Delta$ \eqref{eq:discriminante}. A continuación se presentan los tres casos posibles:
 
 \subsubsection{Caso 1: $\Delta > 0$ (Sistema sobre-amortiguado)}
 
@@ -733,7 +743,7 @@ Vertical & $\frac{dx}{dt} = 0$ & $v = 0$ \\
 
 \subsection{Visualización del Plano de Fase}
 
-El plano de fase permite visualizar cómo el sistema masa-resorte-amortiguador se comporta bajo diferentes condiciones. Las trayectorias convergen hacia el punto de equilibrio $(0,0)$ desde cualquier condición inicial, demostrando la estabilidad global del sistema.
+El plano de fase permite visualizar cómo el sistema \eqref{eq:sistema_amortiguado} se comporta bajo diferentes condiciones. Las trayectorias convergen hacia el punto de equilibrio $(0,0)$ desde cualquier condición inicial, demostrando la estabilidad global del sistema.
 
 \subsubsection{Caso 1: Sistema Sobre-amortiguado ($\Delta > 0$)}
 
@@ -816,7 +826,7 @@ Vel. retorno & Lenta & Óptima & Media \\
 
 \subsection{Conclusión del Análisis de Estabilidad}
 
-El análisis completo del sistema masa-resorte-amortiguador demuestra que para $\alpha, \beta > 0$, el sistema es \textbf{globalmente asintóticamente estable}. Independientemente de las condiciones iniciales, el sistema siempre converge al punto de equilibrio $(0, 0)$, y la energía se disipa completamente. La visualización en el plano de fase confirma que todos los casos de amortiguamiento resultan en trayectorias convergentes al equilibrio.
+El análisis completo del sistema \eqref{eq:sistema_amortiguado} demuestra que para $\alpha, \beta > 0$, el sistema es \textbf{globalmente asintóticamente estable}. Independientemente de las condiciones iniciales, el sistema siempre converge al punto de equilibrio $(0, 0)$, y la energía se disipa completamente. La visualización en el plano de fase confirma que todos los casos de amortiguamiento resultan en trayectorias convergentes al equilibrio.
 
 \subsection*{11:50 am}
 
