@@ -1,4 +1,4 @@
-# 📘 **“Una misión de Eric, Miguel y Alfonso”**
+# 📘 **"Una misión de Eric, Miguel y Alfonso"**
 
 Era una tarde nublada en MATCOM cuando **Eric**, **Miguel** y **Alfonso** recibieron un mensaje inesperado de la profesora de ecuaciones diferenciales:
 
@@ -17,16 +17,11 @@ dijo **Miguel**, siempre optimista.
 
 El auto tenía la aceleración:
 
-$
-\frac{dv}{dt} = 0.12 t^2 + 0.6 t,
-$
+$$\frac{dv}{dt} = 0.12 t^2 + 0.6 t$$
 
-y partía del reposo:
-$
-t_0 = 0, \quad v_0 = 0.
-$
+y partía del reposo: `t₀ = 0`, `v₀ = 0`.
 
->"¡Esto es integrable!" 
+> "¡Esto es integrable!" 
 
 gritó **Eric**, emocionado como si hubiera descubierto oro.
 
@@ -34,42 +29,33 @@ gritó **Eric**, emocionado como si hubiera descubierto oro.
 
 Integraron la aceleración (sin Eric):
 
-$
-v(t) = \int(0.12 t^2 + 0.6 t)\,dt
-= 0.04 t^3 + 0.3 t^2 + C.
-$
+$$v(t) = \int(0.12 t^2 + 0.6 t)\,dt = 0.04 t^3 + 0.3 t^2 + C$$
 
-Como $v(0)=0$, entonces $C=0$.
+Como `v(0) = 0`, entonces `C = 0`.
 
 En los primeros 10 segundos:
 
-$
-v(10) = 0.04(1000) + 0.3(100) = 40 + 30 = 70 \text{ m/s}.
-$
+$$v(10) = 0.04(1000) + 0.3(100) = 40 + 30 = 70 \text{ m/s}$$
 
 > "70 metros por segundo... ese carro anda más duro que el wifi del laboratorio"
+
 bromeó **Alfonso**.
 
 Después integraron la velocidad para encontrar la distancia:
 
-$
-x(t)=\int (0.04 t^3 + 0.3 t^2)\,dt
-=0.01 t^4 + 0.1 t^3.
-$
+$$x(t) = \int (0.04 t^3 + 0.3 t^2)\,dt = 0.01 t^4 + 0.1 t^3$$
 
 Entonces:
 
-$
-x(10)=0.01(10^4)+0.1(1000)=100+100=200 \text{ m}.
-$
+$$x(10) = 0.01(10^4) + 0.1(1000) = 100 + 100 = 200 \text{ m}$$
 
 > "En 10 segundos recorrió **200 metros**. Ese carro sí es diesel premium"
 
 dijo Miguel.
 
-> "Todo gracias a mi! 
+> "¡Todo gracias a mí!"
 
-dijo Eric sin entender mucho que habia pasado
+dijo Eric sin entender mucho qué había pasado.
 
 Luego dibujaron el campo de isoclinas para ver cómo la velocidad aumentaba suavemente con el tiempo.
 
@@ -79,9 +65,7 @@ Luego dibujaron el campo de isoclinas para ver cómo la velocidad aumentaba suav
 
 Cuando comenzaron con:
 
-$
-\frac{dv}{dt}=rv - v^3,
-$
+$$\frac{dv}{dt} = rv - v^3$$
 
 Alfonso preguntó:
 
@@ -93,18 +77,16 @@ Eric respondió:
 
 Encontraron los equilibrios:
 
-$
-v_0 = 0, \qquad v_{\pm} = \pm\sqrt{r}.
-$
+$$v_0 = 0, \qquad v_{\pm} = \pm\sqrt{r}$$
 
 Eric notó:
 
-* Si $r<0$: solo existe $v=0$, estable → *motor apagado*.
-* Si $r>0$: aparecen $\pm\sqrt{r}$ estables → *motor encendido*.
+* Si `r < 0`: solo existe `v = 0`, estable → *motor apagado*.
+* Si `r > 0`: aparecen `±√r` estables → *motor encendido*.
 
 Miguel dibujó el clásico "tenedor" del *pitchfork* y dijo:
 
-> "Entonces el motor pasa de dormido a prendido al cruzar $r=0$... ¡igual que yo cuando me dan café!"
+> "Entonces el motor pasa de dormido a prendido al cruzar `r = 0`... ¡igual que yo cuando me dan café!"
 
 Todos rieron.
 
@@ -116,10 +98,7 @@ Ya faltaban 10 minutos para que cerrara la cafetería.
 
 El sistema era:
 
-$
-\dot x = v, \qquad
-\dot v = -\alpha v - \beta x.
-$
+$$\dot{x} = v, \qquad \dot{v} = -\alpha v - \beta x$$
 
 > "Esto es un sistema lineal de primer orden"
 
@@ -129,11 +108,9 @@ dijo Eric.
 
 Hallaron el punto crítico:
 
-$
-(x^*,v^*)=(0,0).
-$
+$$(x^*, v^*) = (0, 0)$$
 
-El análisis del Jacobiano les mostró que, según los parámetros $\alpha,\beta>0$, el origen es un:
+El análisis del Jacobiano les mostró que, según los parámetros `α, β > 0`, el origen es un:
 
 * **Nodo estable** si la amortiguación es fuerte.
 * **Foco espiral estable** si la amortiguación es débil.
@@ -146,11 +123,12 @@ Alfonso añadió:
 
 > "O sea, si el auto está amarrado a un resorte gigante... ¡normal!"
 
-(Eric seguia sin entender mucho)
+(Eric seguía sin entender mucho)
 
 ---
 
 ## 🎉 **Final**
+
 A las **11:57 am**, tres minutos antes del cierre, terminaron todo el análisis:
 
 * Cinemática del auto
@@ -160,7 +138,6 @@ El profesor les escribió:
 
 > *"Excelente trabajo, equipo. Las empanadas están ganadas."*
 
-Y así, **Eric**, **Miguel** y **Alfonso** salvaron la tarde...
-y la merienda.
+Y así, **Eric**, **Miguel** y **Alfonso** salvaron la tarde... y la merienda.
 
 ---
